@@ -1,0 +1,9 @@
+==========ASSERT_VECTOR=========
+
+ERROR:
+Assertion failed: 0
+   in file /Users/macbook/Documents/GitHub/vector/Vector/../resources/Vector.cpp;
+   in line 51.
+
+===========================
+

@@ -1,0 +1,645 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: Файл main.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#define-members">Макросы</a> &#124;
+<a href="#typedef-members">Определения типов</a> &#124;
+<a href="#enum-members">Перечисления</a> &#124;
+<a href="#func-members">Функции</a> &#124;
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл main.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;cassert&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structt__stack.html">t_stack</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Макросы</h2></td></tr>
+<tr class="memitem:a2b5f2dee1b7ed52c4d89e827e1b3bd74"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a2b5f2dee1b7ed52c4d89e827e1b3bd74">ASSERT_OK</a>(expression)</td></tr>
+<tr class="separator:a2b5f2dee1b7ed52c4d89e827e1b3bd74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Определения типов</h2></td></tr>
+<tr class="memitem:a3748e487fe85d18ece56f4fbf15e5e73"><td class="memItemLeft" align="right" valign="top">typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a3748e487fe85d18ece56f4fbf15e5e73">DATA_TYPE</a></td></tr>
+<tr class="separator:a3748e487fe85d18ece56f4fbf15e5e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Перечисления</h2></td></tr>
+<tr class="memitem:ae5f90fa5da755c7267c8b0ed4ce8631e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae5f90fa5da755c7267c8b0ed4ce8631e">CANARY</a> { <br />
+&#160;&#160;<a class="el" href="main_8cpp.html#ae5f90fa5da755c7267c8b0ed4ce8631ea1cafb071dbb39eb38b2503d1dab9402e">CANARY_POSITION</a> = 1, 
+<a class="el" href="main_8cpp.html#ae5f90fa5da755c7267c8b0ed4ce8631ea4e82870693e9e72c3cd5c225adbac85a">CANARY_VALUE</a> = 666, 
+<a class="el" href="main_8cpp.html#ae5f90fa5da755c7267c8b0ed4ce8631ea6ae55db22b529678db8ea2b2994f40a9">CANARY_SIZE</a> = 2, 
+<a class="el" href="main_8cpp.html#ae5f90fa5da755c7267c8b0ed4ce8631ea333b63cb356806189e57243d0bf2772d">CANARY_TEST_OK</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="main_8cpp.html#ae5f90fa5da755c7267c8b0ed4ce8631ea5ea81aa9af5f655ce528459945a7009e">CANARY_TEST_ERROR</a> = 1
+<br />
+ }</td></tr>
+<tr class="separator:ae5f90fa5da755c7267c8b0ed4ce8631e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af10dd9e978ac7482b357beac461adb7f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af10dd9e978ac7482b357beac461adb7f">errors_or_warning</a> { <br />
+&#160;&#160;<a class="el" href="main_8cpp.html#af10dd9e978ac7482b357beac461adb7fabf350750d0d4fabd8954c0f1e9bbae94">NO_ERROR</a> = 0, 
+<a class="el" href="main_8cpp.html#af10dd9e978ac7482b357beac461adb7fa3035591b637470acaaf8e01212b00b5b">E_MEMORY_ALLOCATION_ERROR</a>, 
+<a class="el" href="main_8cpp.html#af10dd9e978ac7482b357beac461adb7fa03e2a8350f89d408f4b7456f9f30ad28">E_STACK_EXPANSION</a>, 
+<a class="el" href="main_8cpp.html#af10dd9e978ac7482b357beac461adb7fa88de21cf51aa24d2fe744c8056428c82">W_STACK_OVERFLOW</a>, 
+<br />
+&#160;&#160;<a class="el" href="main_8cpp.html#af10dd9e978ac7482b357beac461adb7fad09b14b057dfb02d1247c3ba5f9421b2">E_UNKNOWN_FUNCTION</a>
+<br />
+ }</td></tr>
+<tr class="separator:af10dd9e978ac7482b357beac461adb7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bc2e30028297ac3b7aa8490dea472f6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0bc2e30028297ac3b7aa8490dea472f6">stack_number_operation</a> { <br />
+&#160;&#160;<a class="el" href="main_8cpp.html#a0bc2e30028297ac3b7aa8490dea472f6a89b9730d2a89a1de969f439c8273dff4">S_Construct</a> = 1, 
+<a class="el" href="main_8cpp.html#a0bc2e30028297ac3b7aa8490dea472f6a29e49398717b393cf3cf0736e02f48e1">S_Push</a>, 
+<a class="el" href="main_8cpp.html#a0bc2e30028297ac3b7aa8490dea472f6a60b8775c06d73f5a04cd11e298894ed7">S_Pop</a>, 
+<a class="el" href="main_8cpp.html#a0bc2e30028297ac3b7aa8490dea472f6a00fb0e6599083ee3f8aa710d08d0f952">S_Peek</a>, 
+<br />
+&#160;&#160;<a class="el" href="main_8cpp.html#a0bc2e30028297ac3b7aa8490dea472f6ae4f940f569fbdafd11f6daaf188410ac">S_Out</a>, 
+<a class="el" href="main_8cpp.html#a0bc2e30028297ac3b7aa8490dea472f6a6c9dac10e1f1dfb7ddeb73ed1e2dd71f">S_Destructor</a>
+<br />
+ }</td></tr>
+<tr class="separator:a0bc2e30028297ac3b7aa8490dea472f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaf8b2209127c32d69e2be27e0caaa77"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aaaf8b2209127c32d69e2be27e0caaa77">stack_Canary_check</a> (struct <a class="el" href="structt__stack.html">t_stack</a> *name_stack)</td></tr>
+<tr class="separator:aaaf8b2209127c32d69e2be27e0caaa77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a281510f4c3ca726fc7f733ea2939fb32"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a281510f4c3ca726fc7f733ea2939fb32">stack_Canary_update</a> (struct <a class="el" href="structt__stack.html">t_stack</a> *name_stack, int number_operation)</td></tr>
+<tr class="separator:a281510f4c3ca726fc7f733ea2939fb32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a204556d923da9266a54c00eab22ed283"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a204556d923da9266a54c00eab22ed283">stack_Check</a> (struct <a class="el" href="structt__stack.html">t_stack</a> *name_stack, int line)</td></tr>
+<tr class="separator:a204556d923da9266a54c00eab22ed283"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3d5bb516698d5d9b974abfc5a29811b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab3d5bb516698d5d9b974abfc5a29811b">stack_Construct</a> (struct <a class="el" href="structt__stack.html">t_stack</a> *name_stack, int print_stack_size)</td></tr>
+<tr class="separator:ab3d5bb516698d5d9b974abfc5a29811b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aa204b0523fecdf54fe64b0c2323253"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a6aa204b0523fecdf54fe64b0c2323253">stack_Destructor</a> (struct <a class="el" href="structt__stack.html">t_stack</a> *name_stack)</td></tr>
+<tr class="separator:a6aa204b0523fecdf54fe64b0c2323253"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae809b7efee490ed98281b4922cc148fa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae809b7efee490ed98281b4922cc148fa">stack_Dump</a> (struct <a class="el" href="structt__stack.html">t_stack</a> *name_stack, int line)</td></tr>
+<tr class="separator:ae809b7efee490ed98281b4922cc148fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3150fd882b60f8b75dcc1790744a8239"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a3150fd882b60f8b75dcc1790744a8239">stack_Error</a> (struct <a class="el" href="structt__stack.html">t_stack</a> *name_stack)</td></tr>
+<tr class="separator:a3150fd882b60f8b75dcc1790744a8239"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a33c4107af43595eebf0482c2a3ade8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a7a33c4107af43595eebf0482c2a3ade8">stack_Growth</a> (struct <a class="el" href="structt__stack.html">t_stack</a> *name_stack)</td></tr>
+<tr class="separator:a7a33c4107af43595eebf0482c2a3ade8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd4a2e68131f91b0a87c2af8940a7d78"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#abd4a2e68131f91b0a87c2af8940a7d78">stack_Last_operation</a> (struct <a class="el" href="structt__stack.html">t_stack</a> *name_stack)</td></tr>
+<tr class="separator:abd4a2e68131f91b0a87c2af8940a7d78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2df61f3fb43381706e72f872b2efcf52"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a2df61f3fb43381706e72f872b2efcf52">stack_Out</a> (struct <a class="el" href="structt__stack.html">t_stack</a> *name_stack)</td></tr>
+<tr class="separator:a2df61f3fb43381706e72f872b2efcf52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5c57424e5e2552dffe2a4019467298f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="main_8cpp.html#a3748e487fe85d18ece56f4fbf15e5e73">DATA_TYPE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac5c57424e5e2552dffe2a4019467298f">stack_Peek</a> (struct <a class="el" href="structt__stack.html">t_stack</a> *name_stack)</td></tr>
+<tr class="separator:ac5c57424e5e2552dffe2a4019467298f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0baabeeb82d3e5c34e855cb70e778ffe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0baabeeb82d3e5c34e855cb70e778ffe">stack_Plus</a> (struct <a class="el" href="structt__stack.html">t_stack</a> *name_stack, int element)</td></tr>
+<tr class="separator:a0baabeeb82d3e5c34e855cb70e778ffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8535dc4dc33c34b786583aaefe5bfebb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="main_8cpp.html#a3748e487fe85d18ece56f4fbf15e5e73">DATA_TYPE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a8535dc4dc33c34b786583aaefe5bfebb">stack_Pop</a> (struct <a class="el" href="structt__stack.html">t_stack</a> *name_stack)</td></tr>
+<tr class="separator:a8535dc4dc33c34b786583aaefe5bfebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1912925e9d6dbf188236a3b4b22bc557"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a1912925e9d6dbf188236a3b4b22bc557">stack_Print_str</a> (char str [])</td></tr>
+<tr class="separator:a1912925e9d6dbf188236a3b4b22bc557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93190125b19dbfa346355f4576e68c78"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a93190125b19dbfa346355f4576e68c78">stack_Push</a> (struct <a class="el" href="structt__stack.html">t_stack</a> *name_stack, int element)</td></tr>
+<tr class="separator:a93190125b19dbfa346355f4576e68c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:af295a03ccca66439ee65dcf270f94ce6"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af295a03ccca66439ee65dcf270f94ce6">LOG_FILES_NAME</a> [] = &quot;LogFiles.txt&quot;</td></tr>
+<tr class="separator:af295a03ccca66439ee65dcf270f94ce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Макросы</h2>
+<a id="a2b5f2dee1b7ed52c4d89e827e1b3bd74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b5f2dee1b7ed52c4d89e827e1b3bd74">&#9670;&nbsp;</a></span>ASSERT_OK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ASSERT_OK</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">expression</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Макроопределение:</b><div class="fragment"><div class="line"><span class="keywordflow">if</span> (expression) {\</div><div class="line">\</div><div class="line">} <span class="keywordflow">else</span> {\</div><div class="line">FILE *files = fopen (<span class="stringliteral">&quot;LogFiles.txt&quot;</span>, <span class="stringliteral">&quot;at&quot;</span>);\</div><div class="line">\</div><div class="line">fprintf(files, <span class="stringliteral">&quot;==========ASSERT_OK=========\n\n&quot;</span>);\</div><div class="line">fprintf(files, <span class="stringliteral">&quot;ERROR:\nAssertion failed: %s\n   in file %s;\n   in line %i.\n&quot;</span>, #expression, __FILE__, __LINE__);\</div><div class="line">fprintf(files, <span class="stringliteral">&quot;\n===========================\n\n&quot;</span>);\</div><div class="line">\</div><div class="line">fclose(files);\</div><div class="line">assert (expression);\</div><div class="line">}</div></div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Типы</h2>
+<a id="a3748e487fe85d18ece56f4fbf15e5e73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3748e487fe85d18ece56f4fbf15e5e73">&#9670;&nbsp;</a></span>DATA_TYPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int <a class="el" href="main_8cpp.html#a3748e487fe85d18ece56f4fbf15e5e73">DATA_TYPE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Перечисления</h2>
+<a id="ae5f90fa5da755c7267c8b0ed4ce8631e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5f90fa5da755c7267c8b0ed4ce8631e">&#9670;&nbsp;</a></span>CANARY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="main_8cpp.html#ae5f90fa5da755c7267c8b0ed4ce8631e">CANARY</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="ae5f90fa5da755c7267c8b0ed4ce8631ea1cafb071dbb39eb38b2503d1dab9402e"></a>CANARY_POSITION&#160;</td><td class="fielddoc"><p>позиция в стеке </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae5f90fa5da755c7267c8b0ed4ce8631ea4e82870693e9e72c3cd5c225adbac85a"></a>CANARY_VALUE&#160;</td><td class="fielddoc"><p>значение канарейкпи </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae5f90fa5da755c7267c8b0ed4ce8631ea6ae55db22b529678db8ea2b2994f40a9"></a>CANARY_SIZE&#160;</td><td class="fielddoc"><p>колличество канареек в стеке </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae5f90fa5da755c7267c8b0ed4ce8631ea333b63cb356806189e57243d0bf2772d"></a>CANARY_TEST_OK&#160;</td><td class="fielddoc"><p>тест канарейки успешен </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae5f90fa5da755c7267c8b0ed4ce8631ea5ea81aa9af5f655ce528459945a7009e"></a>CANARY_TEST_ERROR&#160;</td><td class="fielddoc"><p>тест канарейки провелен </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="af10dd9e978ac7482b357beac461adb7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af10dd9e978ac7482b357beac461adb7f">&#9670;&nbsp;</a></span>errors_or_warning</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="main_8cpp.html#af10dd9e978ac7482b357beac461adb7f">errors_or_warning</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="af10dd9e978ac7482b357beac461adb7fabf350750d0d4fabd8954c0f1e9bbae94"></a>NO_ERROR&#160;</td><td class="fielddoc"><p>нет ошибок </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af10dd9e978ac7482b357beac461adb7fa3035591b637470acaaf8e01212b00b5b"></a>E_MEMORY_ALLOCATION_ERROR&#160;</td><td class="fielddoc"><p>ошибка создания стека в конструкторе из-за памяти </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af10dd9e978ac7482b357beac461adb7fa03e2a8350f89d408f4b7456f9f30ad28"></a>E_STACK_EXPANSION&#160;</td><td class="fielddoc"><p>ошибка добавления элемента в стек из-за памяти </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af10dd9e978ac7482b357beac461adb7fa88de21cf51aa24d2fe744c8056428c82"></a>W_STACK_OVERFLOW&#160;</td><td class="fielddoc"><p>предупреждение об добавлении элемента </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af10dd9e978ac7482b357beac461adb7fad09b14b057dfb02d1247c3ba5f9421b2"></a>E_UNKNOWN_FUNCTION&#160;</td><td class="fielddoc"><p>неизвестная функция </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a0bc2e30028297ac3b7aa8490dea472f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bc2e30028297ac3b7aa8490dea472f6">&#9670;&nbsp;</a></span>stack_number_operation</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="main_8cpp.html#a0bc2e30028297ac3b7aa8490dea472f6">stack_number_operation</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a0bc2e30028297ac3b7aa8490dea472f6a89b9730d2a89a1de969f439c8273dff4"></a>S_Construct&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0bc2e30028297ac3b7aa8490dea472f6a29e49398717b393cf3cf0736e02f48e1"></a>S_Push&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0bc2e30028297ac3b7aa8490dea472f6a60b8775c06d73f5a04cd11e298894ed7"></a>S_Pop&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0bc2e30028297ac3b7aa8490dea472f6a00fb0e6599083ee3f8aa710d08d0f952"></a>S_Peek&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0bc2e30028297ac3b7aa8490dea472f6ae4f940f569fbdafd11f6daaf188410ac"></a>S_Out&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0bc2e30028297ac3b7aa8490dea472f6a6c9dac10e1f1dfb7ddeb73ed1e2dd71f"></a>S_Destructor&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Функции</h2>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaaf8b2209127c32d69e2be27e0caaa77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaf8b2209127c32d69e2be27e0caaa77">&#9670;&nbsp;</a></span>stack_Canary_check()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int stack_Canary_check </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structt__stack.html">t_stack</a> *&#160;</td>
+          <td class="paramname"><em>name_stack</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a281510f4c3ca726fc7f733ea2939fb32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a281510f4c3ca726fc7f733ea2939fb32">&#9670;&nbsp;</a></span>stack_Canary_update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int stack_Canary_update </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structt__stack.html">t_stack</a> *&#160;</td>
+          <td class="paramname"><em>name_stack</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>number_operation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a204556d923da9266a54c00eab22ed283"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a204556d923da9266a54c00eab22ed283">&#9670;&nbsp;</a></span>stack_Check()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int stack_Check </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structt__stack.html">t_stack</a> *&#160;</td>
+          <td class="paramname"><em>name_stack</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>line</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab3d5bb516698d5d9b974abfc5a29811b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3d5bb516698d5d9b974abfc5a29811b">&#9670;&nbsp;</a></span>stack_Construct()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int stack_Construct </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structt__stack.html">t_stack</a> *&#160;</td>
+          <td class="paramname"><em>name_stack</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>print_stack_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6aa204b0523fecdf54fe64b0c2323253"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6aa204b0523fecdf54fe64b0c2323253">&#9670;&nbsp;</a></span>stack_Destructor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int stack_Destructor </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structt__stack.html">t_stack</a> *&#160;</td>
+          <td class="paramname"><em>name_stack</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae809b7efee490ed98281b4922cc148fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae809b7efee490ed98281b4922cc148fa">&#9670;&nbsp;</a></span>stack_Dump()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int stack_Dump </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structt__stack.html">t_stack</a> *&#160;</td>
+          <td class="paramname"><em>name_stack</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>line</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3150fd882b60f8b75dcc1790744a8239"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3150fd882b60f8b75dcc1790744a8239">&#9670;&nbsp;</a></span>stack_Error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int stack_Error </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structt__stack.html">t_stack</a> *&#160;</td>
+          <td class="paramname"><em>name_stack</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7a33c4107af43595eebf0482c2a3ade8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a33c4107af43595eebf0482c2a3ade8">&#9670;&nbsp;</a></span>stack_Growth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int stack_Growth </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structt__stack.html">t_stack</a> *&#160;</td>
+          <td class="paramname"><em>name_stack</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abd4a2e68131f91b0a87c2af8940a7d78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd4a2e68131f91b0a87c2af8940a7d78">&#9670;&nbsp;</a></span>stack_Last_operation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * stack_Last_operation </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structt__stack.html">t_stack</a> *&#160;</td>
+          <td class="paramname"><em>name_stack</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2df61f3fb43381706e72f872b2efcf52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2df61f3fb43381706e72f872b2efcf52">&#9670;&nbsp;</a></span>stack_Out()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int stack_Out </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structt__stack.html">t_stack</a> *&#160;</td>
+          <td class="paramname"><em>name_stack</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac5c57424e5e2552dffe2a4019467298f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5c57424e5e2552dffe2a4019467298f">&#9670;&nbsp;</a></span>stack_Peek()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="main_8cpp.html#a3748e487fe85d18ece56f4fbf15e5e73">DATA_TYPE</a> stack_Peek </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structt__stack.html">t_stack</a> *&#160;</td>
+          <td class="paramname"><em>name_stack</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0baabeeb82d3e5c34e855cb70e778ffe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0baabeeb82d3e5c34e855cb70e778ffe">&#9670;&nbsp;</a></span>stack_Plus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int stack_Plus </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structt__stack.html">t_stack</a> *&#160;</td>
+          <td class="paramname"><em>name_stack</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>element</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8535dc4dc33c34b786583aaefe5bfebb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8535dc4dc33c34b786583aaefe5bfebb">&#9670;&nbsp;</a></span>stack_Pop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="main_8cpp.html#a3748e487fe85d18ece56f4fbf15e5e73">DATA_TYPE</a> stack_Pop </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structt__stack.html">t_stack</a> *&#160;</td>
+          <td class="paramname"><em>name_stack</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1912925e9d6dbf188236a3b4b22bc557"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1912925e9d6dbf188236a3b4b22bc557">&#9670;&nbsp;</a></span>stack_Print_str()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int stack_Print_str </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>str</em>[]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a93190125b19dbfa346355f4576e68c78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93190125b19dbfa346355f4576e68c78">&#9670;&nbsp;</a></span>stack_Push()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int stack_Push </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structt__stack.html">t_stack</a> *&#160;</td>
+          <td class="paramname"><em>name_stack</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>element</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Переменные</h2>
+<a id="af295a03ccca66439ee65dcf270f94ce6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af295a03ccca66439ee65dcf270f94ce6">&#9670;&nbsp;</a></span>LOG_FILES_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char LOG_FILES_NAME[] = &quot;LogFiles.txt&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

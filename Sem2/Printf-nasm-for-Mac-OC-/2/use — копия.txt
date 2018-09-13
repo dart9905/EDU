@@ -1,0 +1,5 @@
+cd documents/github/printf-nasm-for-mac-oc-/2
+
+nasm -f macho64 1235.s && ld -macosx_version_min 10.7.0 -o 1235 1235.o && ./1235
+
+nasm -f macho64 123.s && clang main.cpp -c && clang -Wl,-no_pie main.o helloworld.o -o exec && ./exec

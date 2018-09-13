@@ -1,0 +1,3 @@
+cd documents/github/printf-nasm-for-mac-oc-
+
+nasm -f macho64 helloworld.s && clang main.cpp -c && clang -Wl,-no_pie main.o helloworld.o -o exec && ./exec

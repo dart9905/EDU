@@ -1,0 +1,9 @@
+==========ASSERT_LIST========
+
+ERROR:
+Assertion failed: _cell
+   in file /Users/macbook/Documents/GitHub/-Hash-Table/Hash/../resources/List.h;
+   in line 71.
+
+=============================
+
