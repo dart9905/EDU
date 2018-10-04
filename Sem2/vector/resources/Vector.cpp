@@ -157,6 +157,11 @@ public:
      Dump the vector data. Blocked by the define, to increase the speed of the code.
     */
     bool    Dump (const char* str) const;
+    /*
+     template <typename data_T>
+     bool vectormy <data_T> :: Dump (const char* str)
+    */
+    
     
     /*!
      Function to get the size of an array.
@@ -454,8 +459,9 @@ double  vectormy <data_T> :: operator [] (double d) {
 
 
 
+
 template <typename data_T>
-bool vectormy <data_T> :: Dump (const char* str) {
+bool vectormy <data_T> :: Dump (const char* str) const {
     FILE *files = fopen (_LOG_FILES_NAME, "at");
     ASSERT_VECTOR(files);
     

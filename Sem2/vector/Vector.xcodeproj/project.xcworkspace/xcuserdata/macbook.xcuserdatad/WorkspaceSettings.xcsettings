@@ -7,9 +7,9 @@
 	<key>CustomBuildLocationType</key>
 	<string>RelativeToDerivedData</string>
 	<key>DerivedDataCustomLocation</key>
-	<string>DerivedData</string>
+	<string>/Users/macbook/Documents/GitHub/EDU/Sem2/vector</string>
 	<key>DerivedDataLocationStyle</key>
-	<string>WorkspaceRelativePath</string>
+	<string>AbsolutePath</string>
 	<key>EnabledFullIndexStoreVisibility</key>
 	<false/>
 	<key>IssueFilterStyle</key>
