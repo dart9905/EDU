@@ -1,0 +1,119 @@
+\hypertarget{prog_8cpp}{}\section{prog.\+cpp File Reference}
+\label{prog_8cpp}\index{prog.\+cpp@{prog.\+cpp}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/ipc.\+h$>$}\newline
+{\ttfamily \#include $<$sys/shm.\+h$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmessage}{message}
+\begin{DoxyCompactList}\small\item\em Messenger buffer class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{prog_8cpp_aaa491b9328cf9c04825acd2cb752753f}{closeprog} (\hyperlink{classmessage}{message} $\ast$buf)
+\begin{DoxyCompactList}\small\item\em Prepares to close files or closes it before the end of the program. \end{DoxyCompactList}\item 
+int \hyperlink{prog_8cpp_a0178244f824f9e7f64d51905a8966cfa}{E\+R\+R\+O\+Ren} (\hyperlink{classmessage}{message} $\ast$buf)
+\begin{DoxyCompactList}\small\item\em Function for an adequate program crash when a user enters an empty message. \end{DoxyCompactList}\item 
+int \hyperlink{prog_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\item 
+char $\ast$ \hyperlink{prog_8cpp_a58bd3d2171953778234752496c4a4167}{openfile} (char $\ast$namefile)
+\begin{DoxyCompactList}\small\item\em Opens or creates a file using functions ftok(), shmget(). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{prog_8cpp_a6017a15c4ab0581df423d54d493f39df}{S\+I\+Z\+E\+\_\+\+B\+U\+F\+\_\+\+M\+AX} = 1024
+\begin{DoxyCompactList}\small\item\em maximum allowed message buffer length. \end{DoxyCompactList}\item 
+const int \hyperlink{prog_8cpp_ab95978b944df00bd3a735708e4336576}{S\+I\+Z\+E\+\_\+\+S\+T\+R\+\_\+\+M\+AX} = 256
+\begin{DoxyCompactList}\small\item\em terminal messenger. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{prog_8cpp_aaa491b9328cf9c04825acd2cb752753f}\label{prog_8cpp_aaa491b9328cf9c04825acd2cb752753f}} 
+\index{prog.\+cpp@{prog.\+cpp}!closeprog@{closeprog}}
+\index{closeprog@{closeprog}!prog.\+cpp@{prog.\+cpp}}
+\subsubsection{\texorpdfstring{closeprog()}{closeprog()}}
+{\footnotesize\ttfamily int closeprog (\begin{DoxyParamCaption}\item[{\hyperlink{classmessage}{message} $\ast$}]{buf }\end{DoxyParamCaption})}
+
+
+
+Prepares to close files or closes it before the end of the program. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em buf} & pointer to the message buffer to write. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{prog_8cpp_a0178244f824f9e7f64d51905a8966cfa}\label{prog_8cpp_a0178244f824f9e7f64d51905a8966cfa}} 
+\index{prog.\+cpp@{prog.\+cpp}!E\+R\+R\+O\+Ren@{E\+R\+R\+O\+Ren}}
+\index{E\+R\+R\+O\+Ren@{E\+R\+R\+O\+Ren}!prog.\+cpp@{prog.\+cpp}}
+\subsubsection{\texorpdfstring{E\+R\+R\+O\+Ren()}{ERRORen()}}
+{\footnotesize\ttfamily int E\+R\+R\+O\+Ren (\begin{DoxyParamCaption}\item[{\hyperlink{classmessage}{message} $\ast$}]{buf }\end{DoxyParamCaption})}
+
+
+
+Function for an adequate program crash when a user enters an empty message. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em buf} & pointer to the message buffer to write. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{prog_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{prog_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{prog.\+cpp@{prog.\+cpp}!main@{main}}
+\index{main@{main}!prog.\+cpp@{prog.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{prog_8cpp_a58bd3d2171953778234752496c4a4167}\label{prog_8cpp_a58bd3d2171953778234752496c4a4167}} 
+\index{prog.\+cpp@{prog.\+cpp}!openfile@{openfile}}
+\index{openfile@{openfile}!prog.\+cpp@{prog.\+cpp}}
+\subsubsection{\texorpdfstring{openfile()}{openfile()}}
+{\footnotesize\ttfamily char $\ast$ openfile (\begin{DoxyParamCaption}\item[{char $\ast$}]{namefile }\end{DoxyParamCaption})}
+
+
+
+Opens or creates a file using functions ftok(), shmget(). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em namefile} & full file path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to string array. 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{prog_8cpp_a6017a15c4ab0581df423d54d493f39df}\label{prog_8cpp_a6017a15c4ab0581df423d54d493f39df}} 
+\index{prog.\+cpp@{prog.\+cpp}!S\+I\+Z\+E\+\_\+\+B\+U\+F\+\_\+\+M\+AX@{S\+I\+Z\+E\+\_\+\+B\+U\+F\+\_\+\+M\+AX}}
+\index{S\+I\+Z\+E\+\_\+\+B\+U\+F\+\_\+\+M\+AX@{S\+I\+Z\+E\+\_\+\+B\+U\+F\+\_\+\+M\+AX}!prog.\+cpp@{prog.\+cpp}}
+\subsubsection{\texorpdfstring{S\+I\+Z\+E\+\_\+\+B\+U\+F\+\_\+\+M\+AX}{SIZE\_BUF\_MAX}}
+{\footnotesize\ttfamily const int S\+I\+Z\+E\+\_\+\+B\+U\+F\+\_\+\+M\+AX = 1024}
+
+
+
+maximum allowed message buffer length. 
+
+Constant of the maximum length of the buffer storing user messages. \mbox{\Hypertarget{prog_8cpp_ab95978b944df00bd3a735708e4336576}\label{prog_8cpp_ab95978b944df00bd3a735708e4336576}} 
+\index{prog.\+cpp@{prog.\+cpp}!S\+I\+Z\+E\+\_\+\+S\+T\+R\+\_\+\+M\+AX@{S\+I\+Z\+E\+\_\+\+S\+T\+R\+\_\+\+M\+AX}}
+\index{S\+I\+Z\+E\+\_\+\+S\+T\+R\+\_\+\+M\+AX@{S\+I\+Z\+E\+\_\+\+S\+T\+R\+\_\+\+M\+AX}!prog.\+cpp@{prog.\+cpp}}
+\subsubsection{\texorpdfstring{S\+I\+Z\+E\+\_\+\+S\+T\+R\+\_\+\+M\+AX}{SIZE\_STR\_MAX}}
+{\footnotesize\ttfamily const int S\+I\+Z\+E\+\_\+\+S\+T\+R\+\_\+\+M\+AX = 256}
+
+
+
+terminal messenger. 
+
+Terminal messenger launched in the console of a single computer.\+maximum allowable length of input string.
+
+Constant of the maximum value of the string length, the message entered by the user. 

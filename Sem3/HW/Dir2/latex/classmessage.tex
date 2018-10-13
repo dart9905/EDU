@@ -1,0 +1,239 @@
+\hypertarget{classmessage}{}\section{message}
+\label{classmessage}\index{message@{message}}
+
+
+Messenger buffer class.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmessage_aba502b8bb024cc38b45756fdf581f915}{message} ()
+\begin{DoxyCompactList}\small\item\em Standard constructor. \end{DoxyCompactList}\item 
+\hyperlink{classmessage_a3ef1da0ca306b53a28c36153a06b0f7d}{message} (char $\ast$arg)
+\begin{DoxyCompactList}\small\item\em The constructor which, when created, is oriented to the string arg, the buffer now points to it, and \+\_\+data coincides with arg and \+\_\+str points to the string from the second element. \end{DoxyCompactList}\item 
+\hyperlink{classmessage_ad1e1d5c1974b1842edde5b261015cdde}{$\sim$message} ()
+\begin{DoxyCompactList}\small\item\em Standard destructor. \end{DoxyCompactList}\item 
+int \hyperlink{classmessage_ade996ea0a39cac012e455bb82c1bd88f}{add} (char $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Appends it to the current buffer line\textquotesingle{}s string \+\_\+str based on the value of \+\_\+capacity. \end{DoxyCompactList}\item 
+int \hyperlink{classmessage_a86ea56f1017e712e5b721013f1bdfb49}{add} (const char $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Appends it to the current buffer line\textquotesingle{}s string \+\_\+str based on the value of \+\_\+capacity. \end{DoxyCompactList}\item 
+int \hyperlink{classmessage_ad7becd1f37b2db660d2335aec66075c8}{capacity} ()
+\begin{DoxyCompactList}\small\item\em The function considers the new value as a private variable \+\_\+capacity, based on changes to the \+\_\+str buffer, and provides the new real value to the user. \end{DoxyCompactList}\item 
+int \hyperlink{classmessage_a6add30ca9731721b8b271a11c7279932}{mov} (int len)
+\begin{DoxyCompactList}\small\item\em Shifts a string to the beginning by a specified number of characters. \end{DoxyCompactList}\item 
+\hyperlink{classmessage}{message} \& \hyperlink{classmessage_ac31cbd97176d63baa87ee8b2fddb51aa}{operator=} (char $\ast$arg)
+\begin{DoxyCompactList}\small\item\em The operator equals the string, that is, appends it to the end of the current line of the \+\_\+str buffer, focusing on the \+\_\+capacity value, if there is not enough space in the buffer, the first values in the buffer are erased, meaning \+\_\+str. \end{DoxyCompactList}\item 
+\hyperlink{classmessage}{message} \& \hyperlink{classmessage_a6264b8942d815bd3d999b2a9b6475825}{operator=} (const char $\ast$arg)
+\begin{DoxyCompactList}\small\item\em The operator equals the string, that is, appends it to the end of the current line of the \+\_\+str buffer, focusing on the \+\_\+capacity value, if there is not enough space in the buffer, the first values in the buffer are erased, meaning \+\_\+str. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classmessage_a6d995411bcb21f78e2b123e9449df39c}{\+\_\+data}
+\begin{DoxyCompactList}\small\item\em pointer to full buffer. \end{DoxyCompactList}\item 
+int \hyperlink{classmessage_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}
+\begin{DoxyCompactList}\small\item\em line size or buffer size minus one. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{classmessage_a2606729876d9435e492e52b9ffca7968}{\+\_\+str}
+\begin{DoxyCompactList}\small\item\em pointer to string in buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classmessage_adc9ca8d1d3cf06b3975b6e768a942c61}{\+\_\+capacity}
+\begin{DoxyCompactList}\small\item\em a pointer to the current character of the end of the string in the buffer, meaning str. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Messenger buffer class. 
+
+This class stores a message buffer and controls all events occurring with the buffer. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmessage_aba502b8bb024cc38b45756fdf581f915}\label{classmessage_aba502b8bb024cc38b45756fdf581f915}} 
+\index{message@{message}!message@{message}}
+\index{message@{message}!message@{message}}
+\subsubsection{\texorpdfstring{message()}{message()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classmessage}{message} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Standard constructor. 
+
+\mbox{\Hypertarget{classmessage_a3ef1da0ca306b53a28c36153a06b0f7d}\label{classmessage_a3ef1da0ca306b53a28c36153a06b0f7d}} 
+\index{message@{message}!message@{message}}
+\index{message@{message}!message@{message}}
+\subsubsection{\texorpdfstring{message()}{message()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classmessage}{message} (\begin{DoxyParamCaption}\item[{char $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+The constructor which, when created, is oriented to the string arg, the buffer now points to it, and \+\_\+data coincides with arg and \+\_\+str points to the string from the second element. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em arg} & pointer to the string, the size of the string must match S\+I\+Z\+E\+\_\+\+B\+U\+F\+\_\+\+M\+AX. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmessage_ad1e1d5c1974b1842edde5b261015cdde}\label{classmessage_ad1e1d5c1974b1842edde5b261015cdde}} 
+\index{message@{message}!````~message@{$\sim$message}}
+\index{````~message@{$\sim$message}!message@{message}}
+\subsubsection{\texorpdfstring{$\sim$message()}{~message()}}
+{\footnotesize\ttfamily $\sim$\hyperlink{classmessage}{message} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Standard destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmessage_ade996ea0a39cac012e455bb82c1bd88f}\label{classmessage_ade996ea0a39cac012e455bb82c1bd88f}} 
+\index{message@{message}!add@{add}}
+\index{add@{add}!message@{message}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int add (\begin{DoxyParamCaption}\item[{char $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+Appends it to the current buffer line\textquotesingle{}s string \+\_\+str based on the value of \+\_\+capacity. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em arg} & pointer to the string, the string must not exceed S\+I\+Z\+E\+\_\+\+B\+U\+F\+\_\+\+M\+AX otherwise characters whose indices exceed S\+I\+Z\+E\+\_\+\+B\+U\+F\+\_\+\+M\+AX will be ignored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmessage_a86ea56f1017e712e5b721013f1bdfb49}\label{classmessage_a86ea56f1017e712e5b721013f1bdfb49}} 
+\index{message@{message}!add@{add}}
+\index{add@{add}!message@{message}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int add (\begin{DoxyParamCaption}\item[{const char $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+Appends it to the current buffer line\textquotesingle{}s string \+\_\+str based on the value of \+\_\+capacity. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em arg} & pointer to the string, the string must not exceed S\+I\+Z\+E\+\_\+\+B\+U\+F\+\_\+\+M\+AX otherwise characters whose indices exceed S\+I\+Z\+E\+\_\+\+B\+U\+F\+\_\+\+M\+AX will be ignored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmessage_ad7becd1f37b2db660d2335aec66075c8}\label{classmessage_ad7becd1f37b2db660d2335aec66075c8}} 
+\index{message@{message}!capacity@{capacity}}
+\index{capacity@{capacity}!message@{message}}
+\subsubsection{\texorpdfstring{capacity()}{capacity()}}
+{\footnotesize\ttfamily int capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The function considers the new value as a private variable \+\_\+capacity, based on changes to the \+\_\+str buffer, and provides the new real value to the user. 
+
+\begin{DoxyReturn}{Returns}
+private variable value \+\_\+capacity. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmessage_a6add30ca9731721b8b271a11c7279932}\label{classmessage_a6add30ca9731721b8b271a11c7279932}} 
+\index{message@{message}!mov@{mov}}
+\index{mov@{mov}!message@{message}}
+\subsubsection{\texorpdfstring{mov()}{mov()}}
+{\footnotesize\ttfamily int mov (\begin{DoxyParamCaption}\item[{int}]{len }\end{DoxyParamCaption})}
+
+
+
+Shifts a string to the beginning by a specified number of characters. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em len} & the length of the rubbed line. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmessage_ac31cbd97176d63baa87ee8b2fddb51aa}\label{classmessage_ac31cbd97176d63baa87ee8b2fddb51aa}} 
+\index{message@{message}!operator=@{operator=}}
+\index{operator=@{operator=}!message@{message}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classmessage}{message} \& operator= (\begin{DoxyParamCaption}\item[{char $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+The operator equals the string, that is, appends it to the end of the current line of the \+\_\+str buffer, focusing on the \+\_\+capacity value, if there is not enough space in the buffer, the first values in the buffer are erased, meaning \+\_\+str. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em arg} & pointer to the string, the string must not exceed S\+I\+Z\+E\+\_\+\+B\+U\+F\+\_\+\+M\+AX otherwise characters whose indices exceed S\+I\+Z\+E\+\_\+\+B\+U\+F\+\_\+\+M\+AX will be ignored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns a link to this. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmessage_a6264b8942d815bd3d999b2a9b6475825}\label{classmessage_a6264b8942d815bd3d999b2a9b6475825}} 
+\index{message@{message}!operator=@{operator=}}
+\index{operator=@{operator=}!message@{message}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classmessage}{message} \& operator= (\begin{DoxyParamCaption}\item[{const char $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+The operator equals the string, that is, appends it to the end of the current line of the \+\_\+str buffer, focusing on the \+\_\+capacity value, if there is not enough space in the buffer, the first values in the buffer are erased, meaning \+\_\+str. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em arg} & pointer to the string, the string must not exceed S\+I\+Z\+E\+\_\+\+B\+U\+F\+\_\+\+M\+AX otherwise characters whose indices exceed S\+I\+Z\+E\+\_\+\+B\+U\+F\+\_\+\+M\+AX will be ignored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns a link to this. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmessage_adc9ca8d1d3cf06b3975b6e768a942c61}\label{classmessage_adc9ca8d1d3cf06b3975b6e768a942c61}} 
+\index{message@{message}!\+\_\+capacity@{\+\_\+capacity}}
+\index{\+\_\+capacity@{\+\_\+capacity}!message@{message}}
+\subsubsection{\texorpdfstring{\+\_\+capacity}{\_capacity}}
+{\footnotesize\ttfamily int \+\_\+capacity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+a pointer to the current character of the end of the string in the buffer, meaning str. 
+
+\mbox{\Hypertarget{classmessage_a6d995411bcb21f78e2b123e9449df39c}\label{classmessage_a6d995411bcb21f78e2b123e9449df39c}} 
+\index{message@{message}!\+\_\+data@{\+\_\+data}}
+\index{\+\_\+data@{\+\_\+data}!message@{message}}
+\subsubsection{\texorpdfstring{\+\_\+data}{\_data}}
+{\footnotesize\ttfamily char$\ast$ \+\_\+data}
+
+
+
+pointer to full buffer. 
+
+\mbox{\Hypertarget{classmessage_aaa6c8c862a2c0bc18c802314cc58961d}\label{classmessage_aaa6c8c862a2c0bc18c802314cc58961d}} 
+\index{message@{message}!\+\_\+size@{\+\_\+size}}
+\index{\+\_\+size@{\+\_\+size}!message@{message}}
+\subsubsection{\texorpdfstring{\+\_\+size}{\_size}}
+{\footnotesize\ttfamily int \+\_\+size}
+
+
+
+line size or buffer size minus one. 
+
+\mbox{\Hypertarget{classmessage_a2606729876d9435e492e52b9ffca7968}\label{classmessage_a2606729876d9435e492e52b9ffca7968}} 
+\index{message@{message}!\+\_\+str@{\+\_\+str}}
+\index{\+\_\+str@{\+\_\+str}!message@{message}}
+\subsubsection{\texorpdfstring{\+\_\+str}{\_str}}
+{\footnotesize\ttfamily char$\ast$ \+\_\+str}
+
+
+
+pointer to string in buffer. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{prog_8cpp}{prog.\+cpp}\end{DoxyCompactItemize}
