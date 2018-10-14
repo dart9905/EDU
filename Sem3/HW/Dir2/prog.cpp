@@ -66,13 +66,6 @@ public:
      */
     ~message();
     
-    /*!
-     \brief The operator equals the string, that is, appends it to the end of the current line of the _str buffer, focusing on the _capacity value, if there is not enough space in the buffer, the first values in the buffer are erased, meaning _str
-     \param[in] arg pointer to the string, the string must not exceed SIZE_BUF_MAX otherwise characters whose indices exceed SIZE_BUF_MAX will be ignored.
-     \return returns a link to this.
-     */
-    //message& operator = (char *arg);
-    
     
     /*!
      \brief The operator equals the string, that is, appends it to the end of the current line of the _str buffer, focusing on the _capacity value, if there is not enough space in the buffer, the first values in the buffer are erased, meaning _str
@@ -80,13 +73,6 @@ public:
      \return returns a link to this.
      */
     message& operator = (const char *arg);
-    
-    /*!
-     \brief Appends it to the current buffer line's string _str based on the value of _capacity.
-     \param[in] arg pointer to the string, the string must not exceed SIZE_BUF_MAX otherwise characters whose indices exceed SIZE_BUF_MAX will be ignored.
-     \return 0.
-     */
-    //int add(char *arg);
     
     /*!
      \brief Appends it to the current buffer line's string _str based on the value of _capacity.
@@ -282,16 +268,7 @@ message:: ~message() {
     _size = 0;
     _capacity = 0;
 }
-/*
-message& message::operator = (char* arg) {
-    capacity();
-    if (_capacity + strlen(arg) >_size) {
-        mov(_capacity + strlen(arg) - _size);
-    }
-    add(arg);
-    return *this;
-}
-//*/
+
 message& message::operator = (const char* arg) {
     capacity();
     if (_capacity + strlen(arg) >_size) {
@@ -300,15 +277,7 @@ message& message::operator = (const char* arg) {
     add(arg);
     return *this;
 }
-/*
-int message::add(char *arg) {
-    for (int i = 0; arg[i] != '\0'; i++, _capacity++) {
-        _str [_capacity] = arg[i];
-    }
-    _str [_capacity] = '\0';
-    return 0;
-}
-//*/
+
 int message::add(const char *arg) {
     for (int i = 0; arg[i] != '\0'; i++, _capacity++) {
         _str [_capacity] = arg[i];
