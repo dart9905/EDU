@@ -10,7 +10,7 @@
  \file
  \brief prog.cpp
  \authors Khromov Alexey
- \version A1.0mac
+ \version A1.2mac
  \date 13.10.2018
  \bug scanf() can enter the loop if the user enters a blank message, at the moment the problem is solved by an error message and the program exits from the abort () loop.
  \warning do not enter a blank message
@@ -71,7 +71,7 @@ public:
      \param[in] arg pointer to the string, the string must not exceed SIZE_BUF_MAX otherwise characters whose indices exceed SIZE_BUF_MAX will be ignored.
      \return returns a link to this.
      */
-    message& operator = (char *arg);
+    //message& operator = (char *arg);
     
     
     /*!
@@ -86,7 +86,7 @@ public:
      \param[in] arg pointer to the string, the string must not exceed SIZE_BUF_MAX otherwise characters whose indices exceed SIZE_BUF_MAX will be ignored.
      \return 0.
      */
-    int add(char *arg);
+    //int add(char *arg);
     
     /*!
      \brief Appends it to the current buffer line's string _str based on the value of _capacity.
@@ -282,7 +282,7 @@ message:: ~message() {
     _size = 0;
     _capacity = 0;
 }
-
+/*
 message& message::operator = (char* arg) {
     capacity();
     if (_capacity + strlen(arg) >_size) {
@@ -291,7 +291,7 @@ message& message::operator = (char* arg) {
     add(arg);
     return *this;
 }
-
+//*/
 message& message::operator = (const char* arg) {
     capacity();
     if (_capacity + strlen(arg) >_size) {
@@ -300,7 +300,7 @@ message& message::operator = (const char* arg) {
     add(arg);
     return *this;
 }
-
+/*
 int message::add(char *arg) {
     for (int i = 0; arg[i] != '\0'; i++, _capacity++) {
         _str [_capacity] = arg[i];
@@ -308,7 +308,7 @@ int message::add(char *arg) {
     _str [_capacity] = '\0';
     return 0;
 }
-
+//*/
 int message::add(const char *arg) {
     for (int i = 0; arg[i] != '\0'; i++, _capacity++) {
         _str [_capacity] = arg[i];

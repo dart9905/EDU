@@ -82,9 +82,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad1e1d5c1974b1842edde5b261015cdde"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmessage.html#ad1e1d5c1974b1842edde5b261015cdde">~message</a> ()</td></tr>
 <tr class="memdesc:ad1e1d5c1974b1842edde5b261015cdde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard destructor.  <a href="#ad1e1d5c1974b1842edde5b261015cdde">More...</a><br /></td></tr>
 <tr class="separator:ad1e1d5c1974b1842edde5b261015cdde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade996ea0a39cac012e455bb82c1bd88f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmessage.html#ade996ea0a39cac012e455bb82c1bd88f">add</a> (char *arg)</td></tr>
-<tr class="memdesc:ade996ea0a39cac012e455bb82c1bd88f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends it to the current buffer line's string _str based on the value of _capacity.  <a href="#ade996ea0a39cac012e455bb82c1bd88f">More...</a><br /></td></tr>
-<tr class="separator:ade996ea0a39cac012e455bb82c1bd88f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86ea56f1017e712e5b721013f1bdfb49"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmessage.html#a86ea56f1017e712e5b721013f1bdfb49">add</a> (const char *arg)</td></tr>
 <tr class="memdesc:a86ea56f1017e712e5b721013f1bdfb49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends it to the current buffer line's string _str based on the value of _capacity.  <a href="#a86ea56f1017e712e5b721013f1bdfb49">More...</a><br /></td></tr>
 <tr class="separator:a86ea56f1017e712e5b721013f1bdfb49"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -94,9 +91,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6add30ca9731721b8b271a11c7279932"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmessage.html#a6add30ca9731721b8b271a11c7279932">mov</a> (int len)</td></tr>
 <tr class="memdesc:a6add30ca9731721b8b271a11c7279932"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shifts a string to the beginning by a specified number of characters.  <a href="#a6add30ca9731721b8b271a11c7279932">More...</a><br /></td></tr>
 <tr class="separator:a6add30ca9731721b8b271a11c7279932"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac31cbd97176d63baa87ee8b2fddb51aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmessage.html">message</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmessage.html#ac31cbd97176d63baa87ee8b2fddb51aa">operator=</a> (char *arg)</td></tr>
-<tr class="memdesc:ac31cbd97176d63baa87ee8b2fddb51aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">The operator equals the string, that is, appends it to the end of the current line of the _str buffer, focusing on the _capacity value, if there is not enough space in the buffer, the first values in the buffer are erased, meaning _str.  <a href="#ac31cbd97176d63baa87ee8b2fddb51aa">More...</a><br /></td></tr>
-<tr class="separator:ac31cbd97176d63baa87ee8b2fddb51aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6264b8942d815bd3d999b2a9b6475825"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmessage.html">message</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmessage.html#a6264b8942d815bd3d999b2a9b6475825">operator=</a> (const char *arg)</td></tr>
 <tr class="memdesc:a6264b8942d815bd3d999b2a9b6475825"><td class="mdescLeft">&#160;</td><td class="mdescRight">The operator equals the string, that is, appends it to the end of the current line of the _str buffer, focusing on the _capacity value, if there is not enough space in the buffer, the first values in the buffer are erased, meaning _str.  <a href="#a6264b8942d815bd3d999b2a9b6475825">More...</a><br /></td></tr>
 <tr class="separator:a6264b8942d815bd3d999b2a9b6475825"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -188,35 +182,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ade996ea0a39cac012e455bb82c1bd88f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade996ea0a39cac012e455bb82c1bd88f">&#9670;&nbsp;</a></span>add() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int add </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>arg</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Appends it to the current buffer line's string _str based on the value of _capacity. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>pointer to the string, the string must not exceed SIZE_BUF_MAX otherwise characters whose indices exceed SIZE_BUF_MAX will be ignored. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>0. </dd></dl>
-
-</div>
-</div>
 <a id="a86ea56f1017e712e5b721013f1bdfb49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86ea56f1017e712e5b721013f1bdfb49">&#9670;&nbsp;</a></span>add() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a86ea56f1017e712e5b721013f1bdfb49">&#9670;&nbsp;</a></span>add()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -233,6 +200,13 @@ Private Attributes</h2></td></tr>
 
 <p>Appends it to the current buffer line's string _str based on the value of _capacity. </p>
 <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>pointer to the string, the string must not exceed SIZE_BUF_MAX otherwise characters whose indices exceed SIZE_BUF_MAX will be ignored. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0.</dd></dl>
+<p>Appends it to the current buffer line's string _str based on the value of _capacity. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>pointer to the string, the string must not exceed SIZE_BUF_MAX otherwise characters whose indices exceed SIZE_BUF_MAX will be ignored. </td></tr>
   </table>
@@ -289,35 +263,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ac31cbd97176d63baa87ee8b2fddb51aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac31cbd97176d63baa87ee8b2fddb51aa">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classmessage.html">message</a> &amp; operator= </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>arg</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The operator equals the string, that is, appends it to the end of the current line of the _str buffer, focusing on the _capacity value, if there is not enough space in the buffer, the first values in the buffer are erased, meaning _str. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>pointer to the string, the string must not exceed SIZE_BUF_MAX otherwise characters whose indices exceed SIZE_BUF_MAX will be ignored. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>returns a link to this. </dd></dl>
-
-</div>
-</div>
 <a id="a6264b8942d815bd3d999b2a9b6475825"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6264b8942d815bd3d999b2a9b6475825">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6264b8942d815bd3d999b2a9b6475825">&#9670;&nbsp;</a></span>operator=()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -334,6 +281,13 @@ Private Attributes</h2></td></tr>
 
 <p>The operator equals the string, that is, appends it to the end of the current line of the _str buffer, focusing on the _capacity value, if there is not enough space in the buffer, the first values in the buffer are erased, meaning _str. </p>
 <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>pointer to the string, the string must not exceed SIZE_BUF_MAX otherwise characters whose indices exceed SIZE_BUF_MAX will be ignored. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>returns a link to this.</dd></dl>
+<p>The operator equals the string, that is, appends it to the end of the current line of the _str buffer, focusing on the _capacity value, if there is not enough space in the buffer, the first values in the buffer are erased, meaning _str </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>pointer to the string, the string must not exceed SIZE_BUF_MAX otherwise characters whose indices exceed SIZE_BUF_MAX will be ignored. </td></tr>
   </table>
