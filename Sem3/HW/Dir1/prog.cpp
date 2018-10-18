@@ -139,7 +139,7 @@ int openfile(char* namefile) {
     
     int num = 1;
     char str = '\0';
-    int FILE = 0;
+    int FILE = -1;
     
     
     switch (mknod(namefile ,S_IFIFO|0666,0)) {

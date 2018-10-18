@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <Cocoa/Cocoa.h> // синтезатор речи
+//#include <Cocoa/Cocoa.h> // синтезатор речи
 #include <cassert>
 
 /*!
