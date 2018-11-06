@@ -48,7 +48,7 @@ int main () {
     
     
     msg_type msgdata;
-    msgdata._data.a_name = 3;
+    msgdata._data.a_name = 4;
     
     int size_str = 0;
     int num = 0;
@@ -61,8 +61,8 @@ int main () {
         
         printf(":");
         /*
-        for (;scanf("%ld:%255[^\n]%*c", msgdata._type, msgdata._data) == 0; ) {};
-        */
+         for (;scanf("%ld:%255[^\n]%*c", msgdata._type, msgdata._data) == 0; ) {};
+         */
         scanf("%d", &num);
         scanf("%s",str);
         
@@ -83,7 +83,7 @@ int main () {
                 
             } else {
                 
-                msgrcv (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 3, 0);
+                msgrcv (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 4, 0);
                 
                 
                 //system("clear");
