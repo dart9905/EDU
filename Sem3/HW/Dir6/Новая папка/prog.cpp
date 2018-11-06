@@ -23,23 +23,12 @@ public:
         _data.b_name = 0;
     }
     
-    msg_type (int IDmsg, int* IDMSG) {
-        _type = NUM_MANAGER;
-        _data.a_name = 0;
-        _data.b_name = 0;
-        
-        msgsnd (IDmsg, this, sizeof(*this) - sizeof (_type), 0);
-        msgrcv (IDmsg, this, sizeof(*this) - sizeof (_type), NUM_START, 0);
-        if (this->_data.a_name == NUM_MANAGER) {
-            *IDMSG = this->_data.b_name;
-        }
-        
-        
-    }
     
     long int _type;
     _msg _data;
 };
+
+int* msg_typew (int IDmsg, msg_type* msg, int* IDMSG, int* User_size);
 
 int main () {
     
@@ -52,8 +41,11 @@ int main () {
     }
     
     int IDMSG = 0;
-    msg_type msgdata (IDmsg, &IDMSG);
+    int* User = NULL;
+    int User_size = 0;
+    msg_type msgdata;
     
+    User = msg_typew (IDmsg, &msgdata, &IDMSG, &User_size);
     
     
     
@@ -78,17 +70,49 @@ int main () {
                 
                 
             } else {
-                msgrcv (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), IDMSG, 0);
-                
-                
-                //system("clear");
-                printf("==========\n%d -> %d\n%s\n==========\n",msgdata._data.a_name, msgdata._data.b_name, msgdata._data._data);
+                if (msgrcv (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), IDMSG, IPC_NOWAIT) != -1) {
+                    //system("clear");
+                    printf("==========\n%d -> %d\n%s\n==========\n",msgdata._data.a_name, msgdata._data.b_name, msgdata._data._data);
+                }
                 
             }
         }
         
     }
     
+    msgdata._type = NUM_MANAGER;
+    msgdata._data.a_name = IDMSG;
+    msgdata._data.b_name = 0;
+    msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
+    
+    delete [] User;
+    
     return 0;
+}
+
+
+
+
+int* msg_typew (int IDmsg, msg_type* msg, int* IDMSG, int* User_size) {
+    msg->_type = NUM_MANAGER;
+    msg->_data.a_name = 0;
+    msg->_data.b_name = 0;
+    
+    msgsnd (IDmsg, msg, sizeof(*msg) - sizeof (msg->_type), 0);
+    msgrcv (IDmsg, msg, sizeof(*msg) - sizeof (msg->_type), NUM_START, 0);
+    if (msg->_data.a_name == NUM_MANAGER) {
+        *IDMSG = msg->_data.b_name;
+    }
+    
+    msgrcv (IDmsg, msg, sizeof(*msg) - sizeof (msg->_type), *IDMSG, 0);
+    *User_size = msg->_data.b_name;
+    int* User_n = new int [*User_size];
+    
+    for (int i = 0; i < *User_size; i++) {
+        msgrcv (IDmsg, msg, sizeof(*msg) - sizeof (msg->_type), *IDMSG, 0);
+        User_n [i] = msg->_data.b_name;
+        
+    }
+    return User_n;
 }
 ///Users/macbook/Documents/GitHub/EDU/Sem3/HW/Dir6/

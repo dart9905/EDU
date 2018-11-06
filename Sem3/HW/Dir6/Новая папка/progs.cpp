@@ -50,6 +50,7 @@ public:
     int add ();
     int sub (int num);
     
+    
     int* _data;
     int _size;
     int _cap;
@@ -75,7 +76,7 @@ int main () {
     
     for (;;) {
         
-        msgrcv (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 1, 0);
+        msgrcv (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), NUM_MANAGER, 0);
         switch (msgdata._data.a_name) {
             case 0:
                 msgdata._type = NUM_START;
@@ -84,12 +85,34 @@ int main () {
                 
                 
                 msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
+                
+                msgdata._type = msgdata._data.b_name;
+                msgdata._data.a_name = NUM_MANAGER;
+                msgdata._data.b_name = manager._cap;
+                
+                
+                msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
+                
+                for (int i = 0; i < manager._cap; i++) {
+                    msgdata._data.b_name = manager._data [i];
+                    msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
+                }
+                
+                
                 break;
                 
             default:
-                msgdata._type = msgdata._data.b_name;
-                
-                msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
+                switch (msgdata._data.b_name) {
+                    case 0:
+                        manager.sub(msgdata._data.a_name);
+                        break;
+                        
+                    default:
+                        msgdata._type = msgdata._data.b_name;
+                        
+                        msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
+                        break;
+                }
                 break;
         }
     }
@@ -120,7 +143,7 @@ manager_type:: ~manager_type () {
 int manager_type:: add () {
     if (_cap >= _size) {
         
-        int* newdata = new int (_size * 2);
+        int* newdata = new int [_size * 2];
         for (int i = 0; i < _size; i++) {
             newdata [i] = _data [i];
         }
