@@ -7,10 +7,33 @@
 
 const int MSG_SIZE = 256;
 
-
-struct msg_type {
-    long int _type;
+struct _msg {
+    int a_name;
+    int b_name;
     char _data [MSG_SIZE];
+};
+
+class msg_type {
+public:
+    msg_type () {
+        _type = 1;
+        _data.a_name = 0;
+        _data.b_name = 0;
+    }
+    
+    msg_type (int IDmsg) {
+        _type = 1;
+        _data.a_name = 0;
+        _data.b_name = 0;
+        
+        msgsnd (IDmsg, this, sizeof(*this) - sizeof (_type), 0);
+        msgrcv (IDmsg, this, sizeof(*this) - sizeof (_type), 2, 0);
+        
+        
+    }
+    
+    long int _type;
+    _msg _data;
 };
 
 
@@ -31,20 +54,11 @@ int main () {
     
     for (;;) {
         
-        if (msgrcv (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0, 0) == -1) {
-            
-            printf("HERNI POLNAI2\n");
-            return 0;
-        }
-        system("clear");
-        printf("==========\n%s\n==========\n", msgdata._data);
-        if (msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0) == -1) {
-            
-            printf("HERNI POLNAI2\n");
-            return 0;
-        }
+        msgrcv (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 1, 0);
         
+        msgdata._type = msgdata._data.b_name;
         
+        msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
         
     }
     

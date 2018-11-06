@@ -7,10 +7,33 @@
 
 const int MSG_SIZE = 256;
 
-
-struct msg_type {
-    long int _type;
+struct _msg {
+    int a_name;
+    int b_name;
     char _data [MSG_SIZE];
+};
+
+class msg_type {
+public:
+    msg_type () {
+        _type = 1;
+        _data.a_name = 0;
+        _data.b_name = 0;
+    }
+    
+    msg_type (int IDmsg) {
+        _type = 1;
+        _data.a_name = 0;
+        _data.b_name = 0;
+        
+        msgsnd (IDmsg, this, sizeof(*this) - sizeof (_type), 0);
+        msgrcv (IDmsg, this, sizeof(*this) - sizeof (_type), 2, 0);
+        
+        
+    }
+    
+    long int _type;
+    _msg _data;
 };
 
 int main () {
@@ -23,17 +46,17 @@ int main () {
         return 0;
     }
     
+    
     msg_type msgdata;
+    msgdata._data.a_name = 3;
+    
     int size_str = 0;
     int num = 0;
     char str [MSG_SIZE];
     
     
-    //printf("%i\n", sizeof (msgdata) - sizeof(long int));
     
-    
-    
-    for (;strcmp(msgdata._data, "exit") != 0;) {
+    for (;strcmp(str, "exit") != 0;) {
         
         
         printf(":");
@@ -50,30 +73,28 @@ int main () {
             
             if (strcmp(str, "show") != 0 && size_str != 0) {
                 
-                
-                msgdata._type = num;
+                msgdata._type = 1;
+                msgdata._data.a_name = 3;
+                msgdata._data.b_name = num;
                 for (int i = 0; i < size_str; i++) {
-                    msgdata._data [i] = str [i];
+                    msgdata._data._data [i] = str [i];
                 }
-                if (msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0) == -1) {
-                    printf("HERNI POLNAI2\n");
-                    return 0;
-                }
+                msgdata._data._data [size_str] = '\0';
+                msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
+                
                 
             } else {
-                
-                if (msgrcv (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 1, 0) == -1) {
-                    
-                    printf("HERNI POLNAI2\n");
-                    return 0;
-                }
+                msgrcv (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 3, 0);
                 
                 
                 //system("clear");
-                printf("==========\n%s\n==========\n", msgdata._data);
+                printf("==========\n%d -> %d\n%s\n==========\n",msgdata._data.a_name, msgdata._data.b_name, msgdata._data._data);
+                msgdata._type = 1;
+                msgdata._data.a_name = 3;
                 
             }
         }
+        str [0] = '\0';
         
     }
     
