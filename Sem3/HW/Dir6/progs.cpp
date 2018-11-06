@@ -24,20 +24,6 @@ public:
         _data.b_name = 0;
     }
     
-    msg_type (int IDmsg, int* IDMSG) {
-        _type = NUM_MANAGER;
-        _data.a_name = 0;
-        _data.b_name = 0;
-        
-        msgsnd (IDmsg, this, sizeof(*this) - sizeof (_type), 0);
-        msgrcv (IDmsg, this, sizeof(*this) - sizeof (_type), NUM_START, 0);
-        if (this->_data.a_name == NUM_MANAGER) {
-            *IDMSG = this->_data.b_name;
-        }
-        
-        
-    }
-    
     long int _type;
     _msg _data;
 };
@@ -59,6 +45,9 @@ public:
 };
 
 
+int start (msg_type& msgdata, manager_type& manager, int IDmsg);
+int list (msg_type& msgdata, manager_type& manager, int IDmsg);
+int city (msg_type& msgdata, manager_type& manager, int IDmsg);
 
 int main () {
     
@@ -79,26 +68,8 @@ int main () {
         msgrcv (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), NUM_MANAGER, 0);
         switch (msgdata._data.a_name) {
             case 0:
-                msgdata._type = NUM_START;
-                msgdata._data.a_name = NUM_MANAGER;
-                msgdata._data.b_name = manager.add();
                 
-                
-                msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
-                
-                msgdata._type = msgdata._data.b_name;
-                msgdata._data.a_name = NUM_MANAGER;
-                msgdata._data.b_name = manager._cap;
-                
-                
-                msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
-                
-                for (int i = 0; i < manager._cap; i++) {
-                    msgdata._data.b_name = manager._data [i];
-                    msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
-                }
-                
-                
+                start (msgdata, manager, IDmsg);
                 break;
                 
             default:
@@ -108,33 +79,11 @@ int main () {
                         break;
                         
                     case NUM_MANAGER:
-                        msgdata._type = msgdata._data.a_name;
-                        msgdata._data.a_name = NUM_MANAGER;
-                        msgdata._data.b_name = manager._cap;
-                        
-                        
-                        msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
-                        
-                        for (int i = 0; i < manager._cap; i++) {
-                            msgdata._data.b_name = manager._data [i];
-                            msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
-                        }
+                        list (msgdata, manager, IDmsg);
                         break;
                         
                     default:
-                        if (msgdata._data.b_name == msgdata._data.a_name) {
-                            
-                            for (int i = 0; i < manager._cap; i++) {
-                                
-                                msgdata._type = manager._data [i];
-                                msgdata._data.b_name = manager._data [i];
-                                msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
-                            }
-                        } else {
-                            msgdata._type = msgdata._data.b_name;
-                            
-                            msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
-                        }
+                        city (msgdata, manager, IDmsg);
                         break;
                 }
                 break;
@@ -189,6 +138,69 @@ int manager_type:: sub (int num) {
             _data[_cap] = 0;
             _cap--;
         }
+    }
+    return 0;
+}
+
+
+int start (msg_type& msgdata, manager_type& manager, int IDmsg) {
+    
+    msgdata._type = NUM_START;
+    msgdata._data.a_name = NUM_MANAGER;
+    msgdata._data.b_name = manager.add();
+    
+    
+    msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
+    
+    msgdata._type = msgdata._data.b_name;
+    msgdata._data.a_name = NUM_MANAGER;
+    msgdata._data.b_name = manager._cap;
+    
+    
+    msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
+    
+    for (int i = 0; i < manager._cap; i++) {
+        msgdata._data.b_name = manager._data [i];
+        msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
+    }
+    
+    return 0;
+}
+
+
+
+int list (msg_type& msgdata, manager_type& manager, int IDmsg) {
+    
+    msgdata._type = msgdata._data.a_name;
+    msgdata._data.a_name = NUM_MANAGER;
+    msgdata._data.b_name = manager._cap;
+    
+    
+    msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
+    
+    for (int i = 0; i < manager._cap; i++) {
+        msgdata._data.b_name = manager._data [i];
+        msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
+    }
+    
+    return 0;
+}
+
+
+int city (msg_type& msgdata, manager_type& manager, int IDmsg) {
+    
+    if (msgdata._data.b_name == msgdata._data.a_name) {
+        
+        for (int i = 0; i < manager._cap; i++) {
+            
+            msgdata._type = manager._data [i];
+            msgdata._data.b_name = manager._data [i];
+            msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
+        }
+    } else {
+        msgdata._type = msgdata._data.b_name;
+        
+        msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
     }
     return 0;
 }
