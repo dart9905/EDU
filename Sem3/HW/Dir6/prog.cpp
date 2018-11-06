@@ -21,13 +21,16 @@ public:
         _data.b_name = 0;
     }
     
-    msg_type (int IDmsg) {
+    msg_type (int IDmsg, int* IDMSG) {
         _type = 1;
         _data.a_name = 0;
         _data.b_name = 0;
         
         msgsnd (IDmsg, this, sizeof(*this) - sizeof (_type), 0);
         msgrcv (IDmsg, this, sizeof(*this) - sizeof (_type), 2, 0);
+        if (this->_data.a_name == 1) {
+            *IDMSG = this->_data.b_name;
+        }
         
         
     }
@@ -46,8 +49,8 @@ int main () {
         return 0;
     }
     
-    
-    msg_type msgdata;
+    int IDMSG = 0;
+    msg_type msgdata (IDmsg, &IDMSG);
     
     
     
@@ -66,14 +69,14 @@ int main () {
             if (strcmp(msgdata._data._data, "show") != 0) {
                 
                 msgdata._type = 1;
-                msgdata._data.a_name = 3;
+                msgdata._data.a_name = IDMSG;
                 
                 
                 msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
                 
                 
             } else {
-                msgrcv (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 3, 0);
+                msgrcv (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), IDMSG, 0);
                 
                 
                 //system("clear");
