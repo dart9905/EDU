@@ -5,7 +5,10 @@
 #include <sys/ipc.h>
 #include <sys/msg.h>
 
+
 const int MSG_SIZE = 256;
+const int NUM_MANAGER = 1;
+const int NUM_START = 2;
 
 struct _msg {
     int a_name;
@@ -16,18 +19,21 @@ struct _msg {
 class msg_type {
 public:
     msg_type () {
-        _type = 1;
+        _type = NUM_MANAGER;
         _data.a_name = 0;
         _data.b_name = 0;
     }
     
-    msg_type (int IDmsg) {
-        _type = 1;
+    msg_type (int IDmsg, int* IDMSG) {
+        _type = NUM_MANAGER;
         _data.a_name = 0;
         _data.b_name = 0;
         
         msgsnd (IDmsg, this, sizeof(*this) - sizeof (_type), 0);
-        msgrcv (IDmsg, this, sizeof(*this) - sizeof (_type), 2, 0);
+        msgrcv (IDmsg, this, sizeof(*this) - sizeof (_type), NUM_START, 0);
+        if (this->_data.a_name == NUM_MANAGER) {
+            *IDMSG = this->_data.b_name;
+        }
         
         
     }
@@ -72,8 +78,8 @@ int main () {
         msgrcv (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 1, 0);
         switch (msgdata._data.a_name) {
             case 0:
-                msgdata._type = 2;
-                msgdata._data.a_name = 1;
+                msgdata._type = NUM_START;
+                msgdata._data.a_name = NUM_MANAGER;
                 msgdata._data.b_name = manager.add();
                 
                 
@@ -81,9 +87,17 @@ int main () {
                 break;
                 
             default:
-                msgdata._type = msgdata._data.b_name;
-                
-                msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
+                switch (msgdata._data.b_name) {
+                    case 0:
+                        manager.sub(msgdata._data.a_name);
+                        break;
+                        
+                    default:
+                        msgdata._type = msgdata._data.b_name;
+                        
+                        msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
+                        break;
+                }
                 break;
         }
     }

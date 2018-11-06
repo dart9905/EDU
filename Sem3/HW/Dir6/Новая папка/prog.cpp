@@ -6,6 +6,8 @@
 #include <sys/msg.h>
 
 const int MSG_SIZE = 256;
+const int NUM_MANAGER = 1;
+const int NUM_START = 2;
 
 struct _msg {
     int a_name;
@@ -16,18 +18,21 @@ struct _msg {
 class msg_type {
 public:
     msg_type () {
-        _type = 1;
+        _type = NUM_MANAGER;
         _data.a_name = 0;
         _data.b_name = 0;
     }
     
-    msg_type (int IDmsg) {
-        _type = 1;
+    msg_type (int IDmsg, int* IDMSG) {
+        _type = NUM_MANAGER;
         _data.a_name = 0;
         _data.b_name = 0;
         
         msgsnd (IDmsg, this, sizeof(*this) - sizeof (_type), 0);
-        msgrcv (IDmsg, this, sizeof(*this) - sizeof (_type), 2, 0);
+        msgrcv (IDmsg, this, sizeof(*this) - sizeof (_type), NUM_START, 0);
+        if (this->_data.a_name == NUM_MANAGER) {
+            *IDMSG = this->_data.b_name;
+        }
         
         
     }
@@ -46,55 +51,41 @@ int main () {
         return 0;
     }
     
-    
-    msg_type msgdata;
-    msgdata._data.a_name = 3;
-    
-    int size_str = 0;
-    int num = 0;
-    char str [MSG_SIZE];
+    int IDMSG = 0;
+    msg_type msgdata (IDmsg, &IDMSG);
     
     
     
-    for (;strcmp(str, "exit") != 0;) {
+    
+    for (;strcmp(msgdata._data._data, "exit") != 0;) {
         
         
         printf(":");
-        /*
-        for (;scanf("%ld:%255[^\n]%*c", msgdata._type, msgdata._data) == 0; ) {};
-        */
-        scanf("%d", &num);
-        scanf("%s",str);
         
         
-        if (strcmp(str, "exit") != 0) {
-            size_str = strlen(str);
+        for (;scanf("%d:%255[^\n]%*c", &msgdata._data.b_name, msgdata._data._data) == 0; ) {};
+        
+        if (strcmp(msgdata._data._data, "exit") != 0) {
             
             
-            if (strcmp(str, "show") != 0 && size_str != 0) {
+            if (strcmp(msgdata._data._data, "show") != 0) {
                 
-                msgdata._type = 1;
-                msgdata._data.a_name = 3;
-                msgdata._data.b_name = num;
-                for (int i = 0; i < size_str; i++) {
-                    msgdata._data._data [i] = str [i];
-                }
-                msgdata._data._data [size_str] = '\0';
+                msgdata._type = NUM_MANAGER;
+                msgdata._data.a_name = IDMSG;
+                
+                
                 msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
                 
                 
             } else {
-                msgrcv (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 3, 0);
+                msgrcv (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), IDMSG, 0);
                 
                 
                 //system("clear");
                 printf("==========\n%d -> %d\n%s\n==========\n",msgdata._data.a_name, msgdata._data.b_name, msgdata._data._data);
-                msgdata._type = 1;
-                msgdata._data.a_name = 3;
                 
             }
         }
-        str [0] = '\0';
         
     }
     
