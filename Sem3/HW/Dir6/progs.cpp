@@ -107,10 +107,34 @@ int main () {
                         manager.sub(msgdata._data.a_name);
                         break;
                         
-                    default:
-                        msgdata._type = msgdata._data.b_name;
+                    case NUM_MANAGER:
+                        msgdata._type = msgdata._data.a_name;
+                        msgdata._data.a_name = NUM_MANAGER;
+                        msgdata._data.b_name = manager._cap;
+                        
                         
                         msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
+                        
+                        for (int i = 0; i < manager._cap; i++) {
+                            msgdata._data.b_name = manager._data [i];
+                            msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
+                        }
+                        break;
+                        
+                    default:
+                        if (msgdata._data.b_name == msgdata._data.a_name) {
+                            
+                            for (int i = 0; i < manager._cap; i++) {
+                                
+                                msgdata._type = manager._data [i];
+                                msgdata._data.b_name = manager._data [i];
+                                msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
+                            }
+                        } else {
+                            msgdata._type = msgdata._data.b_name;
+                            
+                            msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
+                        }
                         break;
                 }
                 break;

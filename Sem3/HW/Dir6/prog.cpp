@@ -17,18 +17,27 @@ struct _msg {
 
 class msg_type {
 public:
+    
+    
+    long int _type;
+    _msg _data;
+    
     msg_type () {
         _type = NUM_MANAGER;
         _data.a_name = 0;
         _data.b_name = 0;
     }
-    
-    
-    long int _type;
-    _msg _data;
+    msg_type (int IDmsg, int* iduse, int* User, int* User_size);
+    int check_list (int iduse, int IDmsg, int* User_n, int* User_size);
 };
 
-int* msg_typew (int IDmsg, msg_type* msg, int* IDMSG, int* User_size);
+int printf_online (int* User, int User_size, int iduse);
+
+int show (int IDmsg, msg_type& msgdata, int iduse);
+
+int drop (msg_type& msgdata, int iduse, int IDmsg);
+
+
 
 int main () {
     
@@ -40,52 +49,41 @@ int main () {
         return 0;
     }
     
-    int IDMSG = 0;
-    int* User = NULL;
+    int iduse = 0;
+    int User [MSG_SIZE];
     int User_size = 0;
-    msg_type msgdata;
+    msg_type msgdata (IDmsg, &iduse, User, &User_size);
     
-    User = msg_typew (IDmsg, &msgdata, &IDMSG, &User_size);
-    
+    printf_online(User, User_size, iduse);
     
     
     for (;strcmp(msgdata._data._data, "exit") != 0;) {
         
+        printf(":>");
+        for (;scanf("%d %255[^\n]%*c", &msgdata._data.b_name, msgdata._data._data) == 0; ) {};
         
-        printf(":");
-        
-        
-        for (;scanf("%d:%255[^\n]%*c", &msgdata._data.b_name, msgdata._data._data) == 0; ) {};
-        
-        if (strcmp(msgdata._data._data, "exit") != 0) {
-            
-            
-            if (strcmp(msgdata._data._data, "show") != 0) {
-                
-                msgdata._type = NUM_MANAGER;
-                msgdata._data.a_name = IDMSG;
-                
-                
-                msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
-                
-                
-            } else {
-                if (msgrcv (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), IDMSG, IPC_NOWAIT) != -1) {
-                    //system("clear");
-                    printf("==========\n%d -> %d\n%s\n==========\n",msgdata._data.a_name, msgdata._data.b_name, msgdata._data._data);
+        if (strcmp(msgdata._data._data, "exit") != 0) {if (strcmp(msgdata._data._data, "show") != 0) {
+                if (strcmp(msgdata._data._data, "list") != 0) {
+                    
+                        drop (msgdata, iduse, IDmsg);
+                    
+                } else {
+                    
+                        msgdata.check_list (iduse, IDmsg, User, &User_size);
+                        printf_online(User, User_size, iduse);
+                    
                 }
+            } else {
                 
+                        show(IDmsg, msgdata, iduse);
             }
         }
-        
     }
     
     msgdata._type = NUM_MANAGER;
-    msgdata._data.a_name = IDMSG;
+    msgdata._data.a_name = iduse;
     msgdata._data.b_name = 0;
     msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
-    
-    delete [] User;
     
     return 0;
 }
@@ -93,26 +91,72 @@ int main () {
 
 
 
-int* msg_typew (int IDmsg, msg_type* msg, int* IDMSG, int* User_size) {
-    msg->_type = NUM_MANAGER;
-    msg->_data.a_name = 0;
-    msg->_data.b_name = 0;
+msg_type:: msg_type (int IDmsg, int* iduse, int* User, int* User_size) {
+    _type = NUM_MANAGER;
+    _data.a_name = 0;
+    _data.b_name = 0;
     
-    msgsnd (IDmsg, msg, sizeof(*msg) - sizeof (msg->_type), 0);
-    msgrcv (IDmsg, msg, sizeof(*msg) - sizeof (msg->_type), NUM_START, 0);
-    if (msg->_data.a_name == NUM_MANAGER) {
-        *IDMSG = msg->_data.b_name;
+    msgsnd (IDmsg, this, sizeof(*this) - sizeof (_type), 0);
+    msgrcv (IDmsg, this, sizeof(*this) - sizeof (_type), NUM_START, 0);
+    if (_data.a_name == NUM_MANAGER) {
+        *iduse = _data.b_name;
     }
     
-    msgrcv (IDmsg, msg, sizeof(*msg) - sizeof (msg->_type), *IDMSG, 0);
-    *User_size = msg->_data.b_name;
-    int* User_n = new int [*User_size];
+    msgrcv (IDmsg, this, sizeof(*this) - sizeof (_type), *iduse, 0);
+    *User_size = _data.b_name;
     
     for (int i = 0; i < *User_size; i++) {
-        msgrcv (IDmsg, msg, sizeof(*msg) - sizeof (msg->_type), *IDMSG, 0);
-        User_n [i] = msg->_data.b_name;
+        msgrcv (IDmsg, this, sizeof(*this) - sizeof (_type), *iduse, 0);
+        User [i] = _data.b_name;
         
     }
-    return User_n;
+}
+
+
+int printf_online(int* User, int User_size, int iduse) {
+    printf("online %d\n", User_size);
+    for (int i = 0; i < User_size; i++) {
+        printf("us %d\n", User [i]);
+    }
+    printf("you %d\n", iduse);
+    return 0;
+}
+
+
+int show(int IDmsg, msg_type& msgdata, int iduse) {
+    if (msgrcv (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), iduse, IPC_NOWAIT) != -1) {
+        //system("clear");
+        printf("==========\n%d -> %d\n%s\n==========\n",msgdata._data.a_name, msgdata._data.b_name, msgdata._data._data);
+    }
+    return 0;
+}
+
+
+int drop (msg_type& msgdata, int iduse, int IDmsg) {
+    msgdata._type = NUM_MANAGER;
+    msgdata._data.a_name = iduse;
+    msgsnd (IDmsg, &msgdata, sizeof(msgdata) - sizeof (msgdata._type), 0);
+    return 0;
+}
+
+
+int msg_type:: check_list (int iduse, int IDmsg, int* User_n, int* User_size) {
+    
+    _type = NUM_MANAGER;
+    _data.a_name = iduse;
+    _data.b_name = NUM_MANAGER;
+    
+    msgsnd (IDmsg, this, sizeof(*this) - sizeof (_type), 0);
+    
+    msgrcv (IDmsg, this, sizeof(*this) - sizeof (_type), iduse, 0);
+    
+    *User_size = _data.b_name;
+    
+    for (int i = 0; i < *User_size; i++) {
+        msgrcv (IDmsg, this, sizeof(*this) - sizeof (_type), iduse, 0);
+        User_n [i] = _data.b_name;
+        
+    }
+    return 0;
 }
 ///Users/macbook/Documents/GitHub/EDU/Sem3/HW/Dir6/
