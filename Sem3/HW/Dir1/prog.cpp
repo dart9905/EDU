@@ -228,7 +228,7 @@ int print (int FILE, char* buf, char* str, int size_str) {
         system("clear");
         
     } else {
-        
+        int
         int size_buf_end = -1;
         read(FILE, &size_buf, sizeof(int));
         read(FILE, buf, sizeof(char) * size_buf);

@@ -15,6 +15,7 @@ int stat_boss (char* str) {
     char* data1 = asctime(localtime(&buf.st_atime));
     char* data2 = asctime(localtime(&buf.st_mtime));
     char* data3 = asctime(localtime(&buf.st_ctime));
+    
     //*/
     printf("device inode resides on %d\n", buf.st_dev);
     printf("inode's number %llu\n", buf.st_ino);
@@ -43,6 +44,7 @@ int main () {
     dirent* buf;
 
     for (buf =  readdir(dir_n); buf != NULL; buf =  readdir(dir_n)) {
+    
         printf("%s\n", buf->d_name);
     }
     rewinddir(dir_n);
