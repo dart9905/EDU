@@ -28,6 +28,7 @@ int fun (int num_read, int *num_file, int *num_file_whl, char* namedir, int lena
             namedir [i+1] = '\0';
         }
         namedir [lenamedir] = '/';
+        
         if (stat (namedir, &buf_file) == -1)
             printf("\nError stat %s\n\n", namedir);
         namedir [lenamedir] = '\0';
