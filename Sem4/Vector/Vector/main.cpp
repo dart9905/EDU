@@ -8,23 +8,15 @@
 
 #include <iostream>
 
-#include "lib.hpp"
 
-
-
-
-
-
+#include "MatA.hpp"
 
 
 int main(int argc, const char * argv[]) {
+    MatA::Vector X (1,0,0);
+    MatA::Vector Y (0,1,0);
+    MatA::Vector Z = X - 1;
     
-    
-    Vector a(5);
-    a.set_x(5);
-    a.set_y(6);
-    a.set_z(7);
-    
-    std::cout << a.get_x() << '\n' << a.get_y() << '\n' << a.get_z() << std::endl;
+    std::cout << Z.get_x() << ' ' << Z.get_y() << ' ' << Z.get_z() << std::endl;
     return 0;
 }
