@@ -29,6 +29,9 @@ namespace MatA {
             delete [] data_;
         }
         
+        float get (int y) const;
+        float& set (int y);
+        
         float& operator [] (int i);
         
     };
@@ -45,13 +48,15 @@ namespace MatA {
         Matrix (Matrix& M);
         ~Matrix ();
         
+        float get(int x, int y) const;
+        float& set(int x, int y);
         
         subMatrix& operator [] (int i);
         friend std::ostream& operator<< (std::ostream &out, Matrix &M);
         friend std::istream& operator>> (std::istream &in, Matrix &M);
         
-        Matrix&   operator = (Matrix& A);
-        Matrix&   operator = (const float & A);
+        Matrix& operator = (const Matrix& A);
+        Matrix& operator = (const float & A);
         //*
         friend Matrix operator + (Matrix& A, Matrix& B);
         friend Matrix operator * (Matrix& A, Matrix& B);

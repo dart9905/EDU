@@ -14,7 +14,6 @@ namespace MatA {
     class Vector
     {
         friend float ABS(const Vector& A);
-    private:
         float x_, y_, z_;
         
     public:

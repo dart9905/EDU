@@ -61,6 +61,26 @@ namespace MatA {
     }
     
     
+    float Matrix::get(int x, int y) const {
+        
+        return data_[x].get(y);
+    }
+    
+    float subMatrix::get (int y) const {
+        return data_[y];
+    }
+    
+    
+    float& Matrix::set(int x, int y) {
+        
+        return data_[x].set(y);
+    }
+    
+    float& subMatrix::set (int y) {
+        return data_[y];
+    }
+    
+    
     
     subMatrix& Matrix::operator [] (int i) {
         
@@ -101,16 +121,44 @@ namespace MatA {
     }
     
     
-    
-    Matrix& Matrix::operator = (Matrix & A) {
+    /*
+    Matrix& Matrix::operator = (const Matrix & A) {
         ASSERT_MAT(A.size_==(*this).size_)
         for (int i = 0; i < A.size_; i++) {
             for (int j = 0; j < A.size_; j++) {
-                (*this) [i] [j] = A [i] [j];
+                (*this) [i] [j] = A.get(i, j);
             }
         }
         return *this;
     }
+    //*/
+    /*
+    Matrix& Matrix::operator = (const Matrix & A) {
+        ASSERT_MAT(A.size_==(*this).size_)
+        for (int i = 0; i < A.size_; i++) {
+            for (int j = 0; j < A.size_; j++) {
+                this->set(i, j) = A.get(i, j);
+                printf("1 %d %d | %g\n", i, j, A.get(i, j));
+                printf("2 %d %d | %g\n", i, j, this->get(i, j));
+            }
+        }
+        std::cout << *this << std::endl;
+        
+        return *this;
+    }
+    //*/
+    
+    Matrix& Matrix::operator = (const Matrix & A) {
+        ASSERT_MAT(A.size_==(*this).size_)
+        for (int i = 0; i < A.size_; i++) {
+            for (int j = 0; j < A.size_; j++) {
+                (*this) [i] [j] = A.data_[i].operator[](j);
+            }
+        }
+        
+        return *this;
+    }
+    
     Matrix& Matrix::operator = (const float & A) {
         for (int i = 0; i < (*this).size_; i++) {
             for (int j = 0; j < (*this).size_; j++) {

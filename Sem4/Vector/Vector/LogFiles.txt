@@ -1,0 +1,19 @@
+
+==========ASSERT_MAT=========
+
+ERROR:
+Assertion failed: ABS(A)!=0
+   in file /Users/macbook/Documents/GitHub/EDU/Sem4/Vector/Vector/Complex.cpp;
+   in line 142.
+
+===========================
+
+==========ASSERT_MAT=========
+
+ERROR:
+Assertion failed: a!=0
+   in file /Users/macbook/Documents/GitHub/EDU/Sem4/Vector/Vector/Complex.cpp;
+   in line 166.
+
+===========================
+

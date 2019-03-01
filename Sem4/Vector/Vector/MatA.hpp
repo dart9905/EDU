@@ -14,9 +14,11 @@
 
 #include "lib.hpp"
 #include "Matrix.hpp"
+#include "Complex.hpp"
 
 namespace MatA {
     float ABS (const Vector& A);
+    float ABS (const Complex& A);
 }
 
 #endif /* MatA_hpp */

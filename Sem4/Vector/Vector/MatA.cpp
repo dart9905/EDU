@@ -26,5 +26,8 @@ namespace MatA {
     float ABS (const Vector& A) {
         return sqrt(A.x_ * A.x_ + A.y_ * A.y_ + A.z_ * A.z_);
     }
+    float ABS (const Complex& A) {
+        return sqrt(A.a_ * A.a_ + A.b_ * A.b_);
+    }
 }
 #undef ASSERT_MAT
