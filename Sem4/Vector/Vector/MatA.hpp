@@ -13,9 +13,11 @@
 #include <math.h>
 
 #include "lib.hpp"
+#include "Matrix.hpp"
 
 namespace MatA {
-    double ABS (Vector A);
+    float ABS (const Vector& A);
 }
 
 #endif /* MatA_hpp */
+

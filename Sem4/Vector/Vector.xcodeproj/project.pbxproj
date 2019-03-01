@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA3B5436221FFAD8005FD7DA /* Matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA3B5434221FFAD8005FD7DA /* Matrix.cpp */; };
 		FAAFD50C2216C01F00AA73B3 /* MatA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAAFD50A2216C01F00AA73B3 /* MatA.cpp */; };
 		FADB4E7B220D7B7A0093E807 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FADB4E7A220D7B7A0093E807 /* main.cpp */; };
 		FADB4E83220D920F0093E807 /* lib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FADB4E81220D920F0093E807 /* lib.cpp */; };
@@ -25,6 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FA3B5434221FFAD8005FD7DA /* Matrix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix.cpp; sourceTree = "<group>"; };
+		FA3B5435221FFAD8005FD7DA /* Matrix.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Matrix.hpp; sourceTree = "<group>"; };
 		FAAFD50A2216C01F00AA73B3 /* MatA.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MatA.cpp; sourceTree = "<group>"; };
 		FAAFD50B2216C01F00AA73B3 /* MatA.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MatA.hpp; sourceTree = "<group>"; };
 		FADB4E77220D7B7A0093E807 /* Vector */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Vector; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +69,8 @@
 				FADB4E7A220D7B7A0093E807 /* main.cpp */,
 				FAAFD50A2216C01F00AA73B3 /* MatA.cpp */,
 				FAAFD50B2216C01F00AA73B3 /* MatA.hpp */,
+				FA3B5434221FFAD8005FD7DA /* Matrix.cpp */,
+				FA3B5435221FFAD8005FD7DA /* Matrix.hpp */,
 				FADB4E81220D920F0093E807 /* lib.cpp */,
 				FADB4E82220D920F0093E807 /* lib.hpp */,
 			);
@@ -128,6 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3B5436221FFAD8005FD7DA /* Matrix.cpp in Sources */,
 				FAAFD50C2216C01F00AA73B3 /* MatA.cpp in Sources */,
 				FADB4E7B220D7B7A0093E807 /* main.cpp in Sources */,
 				FADB4E83220D920F0093E807 /* lib.cpp in Sources */,
