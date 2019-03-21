@@ -253,6 +253,210 @@ namespace MatA {
         
         return in;
     }
+    
+    /*
+    Vector2D::Vector2D():x_(0), y_(0)
+    {}
+    Vector2D::Vector2D(float A):x_(A), y_(A)
+    {}
+    Vector2D::Vector2D(float X, float Y):x_(X), y_(Y)
+    {}
+    Vector2D::Vector2D(const Vector2D& A):x_(A.x_), y_(A.y_)
+    {}
+    
+    Vector2D::~Vector2D() {
+        x_ = 0; y_ = 0;
+    }
+    
+    void Vector2D::set_x(float X) {
+        x_ = X;
+    }
+    
+    float Vector2D::get_x() {
+        return x_;
+    }
+    
+    void Vector2D::set_y(float Y) {
+        y_ = Y;
+    }
+    float Vector2D::get_y() {
+        return y_;
+    }
+    
+    
+    float& Vector2D::operator [] (int i) {
+        switch (i) {
+            case 0:
+                return x_;
+                break;
+                
+            case 1:
+                return y_;
+                break;
+                
+            default:
+                ASSERT_MAT((i>=0)&&(i<=2))
+                break;
+        }
+        return x_;
+    }
+    
+    
+    
+    Vector2D& Vector2D::operator = (const Vector2D & arg) {
+        this->x_ = arg.x_;
+        this->y_ = arg.y_;
+        return *this;
+    }
+    Vector2D& Vector2D::operator = (const float & arg) {
+        this->x_ = arg;
+        this->y_ = arg;
+        return *this;
+    }
+    
+    
+    
+    
+    Vector2D operator + (const Vector2D& A, const Vector2D& B)  {
+        return Vector2D (A.x_ + B.x_, A.y_ + B.y_);
+    }
+    float operator * (const Vector2D& A, const Vector2D& B) {
+        return A.x_ * B.x_ + A.y_ * B.y_;
+    }
+    Vector2D operator - (const Vector2D& A, const Vector2D& B)  {
+        return Vector2D (A.x_ - B.x_, A.y_ - B.y_);
+    }
+    
+    Vector2D operator + (const Vector2D& A, float a) {
+        return Vector2D (A.x_ + a, A.y_ + a);
+    }
+    Vector2D operator * (const Vector2D& A, float a) {
+        return Vector2D (A.x_ * a, A.y_ * a);
+    }
+    Vector2D operator * (float a, const Vector2D& A) {
+        return Vector2D (A.x_ * a, A.y_ * a);
+    }
+    Vector2D operator - (const Vector2D& A, float a) {
+        return Vector2D (A.x_ - a, A.y_ - a);
+    }
+    Vector2D operator / (const Vector2D& A, float a) {
+        return Vector2D (A.x_ / a, A.y_ / a);
+    }
+    
+    
+    Vector2D& operator ++ ( Vector2D& A, int) {
+        A.x_++;
+        A.y_++;
+        return A;
+    }
+    Vector2D& operator ++ ( Vector2D& A) {
+        A.x_++;
+        A.y_++;
+        return A;
+    }
+    Vector2D& operator -- ( Vector2D& A, int) {
+        A.x_--;
+        A.y_--;
+        return A;
+    }
+    Vector2D& operator -- ( Vector2D& A) {
+        A.x_--;
+        A.y_--;
+        return A;
+    }
+    
+    
+    Vector2D operator - ( const Vector2D& A) {
+        return Vector2D(-A.x_, -A.y_);
+    }
+    
+    const Vector2D& operator + ( const Vector2D& A) {
+        return A;
+    }
+    
+    
+    
+    
+    Vector2D Vector2D::operator += (const Vector2D& A) {
+        x_+=A.x_;
+        y_+=A.y_;
+        return *this;
+    }
+    Vector2D Vector2D::operator -= (const Vector2D& A) {
+        x_-=A.x_;
+        y_-=A.y_;
+        return *this;
+    }
+    
+    
+    Vector2D Vector2D::operator += (float a) {
+        x_+=a;
+        y_+=a;
+        return *this;
+    }
+    Vector2D Vector2D::operator -= (float a) {
+        x_-=a;
+        y_-=a;
+        return *this;
+    }
+    Vector2D Vector2D::operator *= (float a) {
+        x_*=a;
+        y_*=a;
+        return *this;
+    }
+    Vector2D Vector2D::operator /= (float a) {
+        x_/=a;
+        y_/=a;
+        return *this;
+    }
+    
+    bool Vector2D::operator == (const Vector2D& A) {
+        if (ABS(A) == ABS(*this))
+            return true;
+        return false;
+    }
+    bool Vector2D::operator != (const Vector2D& A) {
+        if (ABS(A) != ABS(*this))
+            return true;
+        return false;
+    }
+    bool Vector2D::operator >= (const Vector2D& A) {
+        if (ABS(*this) >= ABS(A))
+            return true;
+        return false;
+    }
+    bool Vector2D::operator <= (const Vector2D& A) {
+        if (ABS(*this) <= ABS(A))
+            return true;
+        return false;
+    }
+    bool Vector2D::operator > (const Vector2D& A) {
+        if (ABS(*this) > ABS(A))
+            return true;
+        return false;
+    }
+    bool Vector2D::operator < (const Vector2D& A) {
+        if (ABS(*this) < ABS(A))
+            return true;
+        return false;
+    }
+    
+    
+    std::ostream& operator<< (std::ostream &out, const Vector2D &A)
+    {
+        out << "Vector(" << A.x_ << ", " << A.y_ << ")";
+        
+        return out;
+    }
+    
+    std::istream& operator>> (std::istream &in, Vector2D &A)
+    {
+        in >> A.x_;
+        in >> A.y_;
+        
+        return in;
+    }
+     //*/
 
 }
 #undef ASSERT_MAT

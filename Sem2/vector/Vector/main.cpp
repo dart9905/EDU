@@ -83,7 +83,7 @@ int main(int argc, char * argv[]) {
     bol [1] = false;
     
     
-    printf("%i%i%i\n%i%i%i\n",A[0],A[1],A[2],B[0],B[1],B[2]);
+    //printf("%i%i%i\n%i%i%i\n",A[0],A[1],A[2],B[0],B[1],B[2]);
     
     
     

@@ -147,7 +147,7 @@ namespace MatA {
         return *this;
     }
     //*/
-    
+    /*
     Matrix& Matrix::operator = (const Matrix & A) {
         ASSERT_MAT(A.size_==(*this).size_)
         for (int i = 0; i < A.size_; i++) {
@@ -158,7 +158,7 @@ namespace MatA {
         
         return *this;
     }
-    
+    //*/
     Matrix& Matrix::operator = (const float & A) {
         for (int i = 0; i < (*this).size_; i++) {
             for (int j = 0; j < (*this).size_; j++) {

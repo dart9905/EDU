@@ -7,11 +7,39 @@
 //
 
 
+
 #include <cassert>
 #include "iostream"
+
+
 namespace MatA {
-    
-    class Vector
+    /*
+    class Vector_0
+    {
+    public:
+        virtual void set_x(float X);
+        virtual float get_x();
+        
+        
+        virtual void set_y(float Y);
+        virtual float get_y();
+        
+        
+        virtual void set_z(float Z);
+        virtual float get_z();
+        
+        
+        virtual float& operator [] (int i);
+        
+        virtual bool operator == (const Vector_0& A);
+        virtual bool operator != (const Vector_0& A);
+        virtual bool operator >= (const Vector_0& A);
+        virtual bool operator <= (const Vector_0& A);
+        virtual bool operator >  (const Vector_0& A);
+        virtual bool operator <  (const Vector_0& A);
+    };
+    //*/
+    class Vector//: public Vector_0
     {
         friend float ABS(const Vector& A);
         float x_, y_, z_;
@@ -81,5 +109,70 @@ namespace MatA {
         friend std::ostream& operator<< (std::ostream &out, const Vector &A);
         friend std::istream& operator>> (std::istream &in, Vector &A);
     };
-
+    /*
+    class Vector2D//: public Vector
+    {
+        friend float ABS(const Vector2D& A);
+        float x_, y_;
+    public:
+        
+        Vector2D();
+        Vector2D(float A);
+        Vector2D(float X, float Y);
+        Vector2D(const Vector2D& A);
+        
+        ~Vector2D();
+        
+        void set_x(float X);
+        float get_x();
+        
+        
+        void set_y(float Y);
+        float get_y();
+        
+        
+        float& operator [] (int i);
+        Vector2D&   operator = (const Vector2D & arg);
+        Vector2D&   operator = (const float & arg);
+        
+        friend Vector2D operator + (const Vector2D& A, const Vector2D& B);
+        friend float operator * (const Vector2D& A, const Vector2D& B);
+        friend Vector2D operator - (const Vector2D& A, const Vector2D& B);
+        
+        friend Vector2D operator + (const Vector2D& A, float a);
+        friend Vector2D operator * (const Vector2D& A, float a);
+        friend Vector2D operator - (const Vector2D& A, float a);
+        friend Vector2D operator / (const Vector2D& A, float a);
+        friend Vector2D operator * (float a, const Vector2D& A);
+        
+        friend Vector2D& operator ++ (Vector2D& A, int);
+        friend Vector2D& operator -- (Vector2D& A, int);
+        friend Vector2D& operator ++ (Vector2D& A);
+        friend Vector2D& operator -- (Vector2D& A);
+        
+        friend const Vector2D& operator + (const Vector2D& A);
+        friend Vector2D operator - (const Vector2D& A);
+        
+        Vector2D operator += (const Vector2D& A);
+        Vector2D operator -= (const Vector2D& A);
+        
+        
+        Vector2D operator += (float a);
+        Vector2D operator -= (float a);
+        Vector2D operator *= (float a);
+        Vector2D operator /= (float a);
+        
+        bool operator == (const Vector2D& A);
+        bool operator != (const Vector2D& A);
+        bool operator >= (const Vector2D& A);
+        bool operator <= (const Vector2D& A);
+        bool operator > (const  Vector2D& A);
+        bool operator < (const  Vector2D& A);
+        
+        
+        
+        friend std::ostream& operator<< (std::ostream &out, const Vector2D &A);
+        friend std::istream& operator>> (std::istream &in, Vector2D &A);
+    };
+     //*/
 }
