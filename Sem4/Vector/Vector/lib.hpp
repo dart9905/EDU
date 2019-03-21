@@ -11,7 +11,33 @@
 #include "iostream"
 namespace MatA {
     
-    class Vector
+    
+    class VectorV
+    {
+    public:
+        virtual ~VectorV() {};
+        
+        virtual void set_x(float X);
+        virtual float get_x();
+        
+        
+        virtual void set_y(float Y);
+        virtual float get_y();
+        
+        
+        
+        virtual float& operator [] (int i);
+        
+        virtual bool operator == (const VectorV& A);
+        virtual bool operator != (const VectorV& A);
+        virtual bool operator >= (const VectorV& A);
+        virtual bool operator <= (const VectorV& A);
+        virtual bool operator > (const VectorV& A);
+        virtual bool operator < (const VectorV& A);
+        
+    };
+    
+    class Vector: virtual public VectorV
     {
         friend float ABS(const Vector& A);
         float x_, y_, z_;
@@ -27,11 +53,11 @@ namespace MatA {
         
         void set_x(float X);
         float get_x();
-
+        
         
         void set_y(float Y);
         float get_y();
-
+        
         
         void set_z(float Z);
         float get_z();
@@ -86,7 +112,7 @@ namespace MatA {
     class Vector2D
     {
         friend float ABS(const Vector2D& A);
-        float x_, y_, z_;
+        float x_, y_;
         
     public:
         

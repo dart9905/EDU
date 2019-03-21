@@ -17,3 +17,12 @@ Assertion failed: a!=0
 
 ===========================
 
+==========ASSERT_MAT=========
+
+ERROR:
+Assertion failed: "virtual class"
+   in file /Users/macbook/Documents/GitHub/EDU/Sem4/Vector/Vector/lib.cpp;
+   in line 510.
+
+===========================
+

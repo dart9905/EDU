@@ -20,6 +20,18 @@ fclose(files);\
 assert (expression);\
 }
 
+#define ASSERT_MAT_S( expression ) \
+{\
+FILE *files = fopen ("LogFiles.txt", "at");\
+\
+fprintf(files, "==========ASSERT_MAT=========\n\n");\
+fprintf(files, "ERROR:\nAssertion failed: %s\n   in file %s;\n   in line %i.\n", #expression, __FILE__, __LINE__);\
+fprintf(files, "\n===========================\n\n");\
+\
+fclose(files);\
+assert (expression);\
+}
+
 #include <cassert>
 #include "lib.hpp"
 #include "iostream"
@@ -456,7 +468,52 @@ namespace MatA {
         
         return in;
     }
-
+    void VectorV::set_x(float X) {
+        ASSERT_MAT_S("virtual class")
+    }
     
+    float VectorV::get_x() {
+        ASSERT_MAT_S("virtual class")
+        return 0;
+    }
+    
+    void VectorV::set_y(float Y) {
+        ASSERT_MAT_S("virtual class")
+    }
+    float VectorV::get_y() {
+        ASSERT_MAT_S("virtual class")
+        return 0;
+    }
+    
+    float& VectorV::operator [] (int i) {
+        ASSERT_MAT_S("virtual class")
+        float a = 0;
+        return a;
+    }
+    bool VectorV::operator == (const VectorV& A) {
+        ASSERT_MAT_S("virtual class")
+        return false;
+    }
+    bool VectorV::operator != (const VectorV& A) {
+        ASSERT_MAT_S("virtual class")
+        return false;
+    }
+    bool VectorV::operator >= (const VectorV& A) {
+        ASSERT_MAT_S("virtual class")
+        return false;
+    }
+    bool VectorV::operator <= (const VectorV& A) {
+        ASSERT_MAT_S("virtual class")
+        return false;
+    }
+    bool VectorV::operator > (const VectorV& A) {
+        ASSERT_MAT_S("virtual class")
+        return false;
+    }
+    bool VectorV::operator < (const VectorV& A) {
+        ASSERT_MAT_S("virtual class")
+        return false;
+    }
 }
+#undef ASSERT_MAT_S
 #undef ASSERT_MAT
