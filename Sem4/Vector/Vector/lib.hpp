@@ -7,39 +7,11 @@
 //
 
 
-
 #include <cassert>
 #include "iostream"
-
-
 namespace MatA {
-    /*
-    class Vector_0
-    {
-    public:
-        virtual void set_x(float X);
-        virtual float get_x();
-        
-        
-        virtual void set_y(float Y);
-        virtual float get_y();
-        
-        
-        virtual void set_z(float Z);
-        virtual float get_z();
-        
-        
-        virtual float& operator [] (int i);
-        
-        virtual bool operator == (const Vector_0& A);
-        virtual bool operator != (const Vector_0& A);
-        virtual bool operator >= (const Vector_0& A);
-        virtual bool operator <= (const Vector_0& A);
-        virtual bool operator >  (const Vector_0& A);
-        virtual bool operator <  (const Vector_0& A);
-    };
-    //*/
-    class Vector//: public Vector_0
+    
+    class Vector
     {
         friend float ABS(const Vector& A);
         float x_, y_, z_;
@@ -109,11 +81,13 @@ namespace MatA {
         friend std::ostream& operator<< (std::ostream &out, const Vector &A);
         friend std::istream& operator>> (std::istream &in, Vector &A);
     };
-    /*
-    class Vector2D//: public Vector
+
+    
+    class Vector2D
     {
         friend float ABS(const Vector2D& A);
-        float x_, y_;
+        float x_, y_, z_;
+        
     public:
         
         Vector2D();
@@ -138,6 +112,7 @@ namespace MatA {
         friend Vector2D operator + (const Vector2D& A, const Vector2D& B);
         friend float operator * (const Vector2D& A, const Vector2D& B);
         friend Vector2D operator - (const Vector2D& A, const Vector2D& B);
+       
         
         friend Vector2D operator + (const Vector2D& A, float a);
         friend Vector2D operator * (const Vector2D& A, float a);
@@ -166,13 +141,13 @@ namespace MatA {
         bool operator != (const Vector2D& A);
         bool operator >= (const Vector2D& A);
         bool operator <= (const Vector2D& A);
-        bool operator > (const  Vector2D& A);
-        bool operator < (const  Vector2D& A);
+        bool operator > (const Vector2D& A);
+        bool operator < (const Vector2D& A);
         
         
         
         friend std::ostream& operator<< (std::ostream &out, const Vector2D &A);
         friend std::istream& operator>> (std::istream &in, Vector2D &A);
     };
-     //*/
+    
 }

@@ -253,8 +253,8 @@ namespace MatA {
         
         return in;
     }
+
     
-    /*
     Vector2D::Vector2D():x_(0), y_(0)
     {}
     Vector2D::Vector2D(float A):x_(A), y_(A)
@@ -456,7 +456,7 @@ namespace MatA {
         
         return in;
     }
-     //*/
 
+    
 }
 #undef ASSERT_MAT

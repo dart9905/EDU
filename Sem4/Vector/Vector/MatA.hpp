@@ -18,7 +18,7 @@
 
 namespace MatA {
     float ABS (const Vector& A);
-    //float ABS (const Vector2D& A);
+    float ABS (const Vector2D& A);
     float ABS (const Complex& A);
 }
 
