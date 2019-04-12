@@ -1,6 +1,5 @@
 //
 //  Matrix.hpp
-//  Vector
 //
 //  Created by macbook on 22/02/2019.
 //  Copyright © 2019 macbook. All rights reserved.
@@ -14,6 +13,7 @@
 
 
 namespace MatA {
+    /*
     class subMatrix {
         int size_;
         float* data_;
@@ -57,7 +57,7 @@ namespace MatA {
         
         Matrix& operator = (const Matrix& A);
         Matrix& operator = (const float & A);
-        //*
+     
         friend Matrix operator + (Matrix& A, Matrix& B);
         friend Matrix operator * (Matrix& A, Matrix& B);
         friend Matrix operator - (Matrix& A, Matrix& B);
@@ -86,9 +86,10 @@ namespace MatA {
         Matrix operator /= (float a);
         
         bool operator == (Matrix& A);
-        //*/
+        
         
     };
+     //*/
 }
 
 

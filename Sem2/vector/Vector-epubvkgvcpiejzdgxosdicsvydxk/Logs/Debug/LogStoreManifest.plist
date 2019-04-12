@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>logFormatVersion</key>
-	<integer>9</integer>
+	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>5BCF03D0-04D2-492E-9D6D-2B34CC11AABD</key>
+		<key>B700DE4A-EE3A-4FB5-ACDD-134F7E71E295</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -15,9 +15,12 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>5BCF03D0-04D2-492E-9D6D-2B34CC11AABD.xcactivitylog</string>
-			<key>highLevelStatus</key>
-			<string>S</string>
+			<string>B700DE4A-EE3A-4FB5-ACDD-134F7E71E295.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
 			<key>schemeIdentifier-containerName</key>
 			<string>Vector project</string>
 			<key>schemeIdentifier-schemeName</key>
@@ -27,13 +30,13 @@
 			<key>signature</key>
 			<string>Debug Vector</string>
 			<key>timeStartedRecording</key>
-			<real>574098860.05561495</real>
+			<real>575906204.10829997</real>
 			<key>timeStoppedRecording</key>
-			<real>574098959.60338402</real>
+			<real>575906283.17543495</real>
 			<key>title</key>
 			<string>Debug Vector</string>
 			<key>uniqueIdentifier</key>
-			<string>5BCF03D0-04D2-492E-9D6D-2B34CC11AABD</string>
+			<string>B700DE4A-EE3A-4FB5-ACDD-134F7E71E295</string>
 		</dict>
 	</dict>
 </dict>

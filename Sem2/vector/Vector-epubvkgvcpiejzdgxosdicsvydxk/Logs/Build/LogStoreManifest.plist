@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>logFormatVersion</key>
-	<integer>9</integer>
+	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>99F46000-7B34-4F80-B041-6E3726BB01B4</key>
+		<key>75EE4D33-78C2-4B37-9DB0-C1F3C88CE272</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -15,9 +15,12 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>99F46000-7B34-4F80-B041-6E3726BB01B4.xcactivitylog</string>
-			<key>highLevelStatus</key>
-			<string>W</string>
+			<string>75EE4D33-78C2-4B37-9DB0-C1F3C88CE272.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
 			<key>schemeIdentifier-containerName</key>
 			<string>Vector project</string>
 			<key>schemeIdentifier-schemeName</key>
@@ -27,13 +30,13 @@
 			<key>signature</key>
 			<string>Build Vector</string>
 			<key>timeStartedRecording</key>
-			<real>574098857.15569794</real>
+			<real>575906198.65192699</real>
 			<key>timeStoppedRecording</key>
-			<real>574098860.21659005</real>
+			<real>575906204.25468898</real>
 			<key>title</key>
 			<string>Build Vector</string>
 			<key>uniqueIdentifier</key>
-			<string>99F46000-7B34-4F80-B041-6E3726BB01B4</string>
+			<string>75EE4D33-78C2-4B37-9DB0-C1F3C88CE272</string>
 		</dict>
 	</dict>
 </dict>

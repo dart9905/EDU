@@ -1,6 +1,5 @@
 //
 //  Matrix.cpp
-//  Vector
 //
 //  Created by macbook on 22/02/2019.
 //  Copyright © 2019 macbook. All rights reserved.
@@ -24,14 +23,111 @@ assert (expression);\
 
 namespace MatA {
     
-    Matrix::Matrix (int n):
-    size_(n)
-    {
-        if (n < 1) {
-            ASSERT_MAT (n < 1)
+    
+    template <typename data_t, int size>
+    class subMatrix {
+        int size_;
+        data_t* data_;
+    public:
+        
+        void subMatrix2 (int i)
+        {
+            size_ = i;
+            data_ = new data_t [size_] {NULL};
+        }
+        ~subMatrix()
+        {
+            delete [] data_;
         }
         
-        data_ = new subMatrix [size_];
+        data_t get (int y) const;
+        data_t& set (int y);
+        
+        data_t& operator [] (int i);
+        
+    };
+    
+    
+    
+    
+    template <typename data_t, int size>
+    class Matrix {
+        int size_;
+        subMatrix<data_t, size>* data_;
+        
+    public:
+        Matrix ();
+        Matrix (Matrix& M);
+        ~Matrix ();
+        
+        data_t get(int x, int y) const;
+        data_t& set(int x, int y);
+        
+        subMatrix<data_t, size>& operator [] (int i);
+        
+        template <typename data_t1, int size1>
+        friend std::ostream& operator<< (std::ostream &out, Matrix<data_t1, size1> &M);
+        template <typename data_t1, int size1>
+        friend std::istream& operator>> (std::istream &in, Matrix<data_t1, size1> &M);
+        
+        Matrix& operator = (const Matrix& A);
+        Matrix& operator = (const data_t & A);
+        //*
+        template <typename data_t1, int size1>
+        friend Matrix<data_t1, size1> operator + (Matrix<data_t1, size1>& A, Matrix<data_t1, size1>& B);
+        template <typename data_t1, int size1>
+        friend Matrix<data_t1, size1> operator * (Matrix<data_t1, size1>& A, Matrix<data_t1, size1>& B);
+        template <typename data_t1, int size1>
+        friend Matrix<data_t1, size1> operator - (Matrix<data_t1, size1>& A, Matrix<data_t1, size1>& B);
+        
+        template <typename data_t1, int size1>
+        friend Matrix<data_t1, size1> operator + (Matrix<data_t1, size1>& A, data_t a);
+        template <typename data_t1, int size1>
+        friend Matrix<data_t1, size1> operator * (Matrix<data_t1, size1>& A, data_t a);
+        template <typename data_t1, int size1>
+        friend Matrix<data_t1, size1> operator - (Matrix<data_t1, size1>& A, data_t a);
+        template <typename data_t1, int size1>
+        friend Matrix<data_t1, size1> operator / (Matrix<data_t1, size1>& A, data_t a);
+        template <typename data_t1, int size1>
+        friend Matrix<data_t1, size1> operator * (float a, Matrix<data_t1, size1>& A);
+        
+        template <typename data_t1, int size1>
+        friend Matrix<data_t1, size1>& operator ++ (Matrix<data_t1, size1>& A, int);
+        template <typename data_t1, int size1>
+        friend Matrix<data_t1, size1>& operator -- (Matrix<data_t1, size1>& A, int);
+        template <typename data_t1, int size1>
+        friend Matrix<data_t1, size1>& operator ++ (Matrix<data_t1, size1>& A);
+        template <typename data_t1, int size1>
+        friend Matrix<data_t1, size1>& operator -- (Matrix<data_t1, size1>& A);
+        
+        template <typename data_t1, int size1>
+        friend const Matrix<data_t1, size1>& operator + (const Matrix<data_t1, size1>& A);
+        template <typename data_t1, int size1>
+        friend Matrix<data_t1, size1> operator - (Matrix<data_t1, size1>& A);
+        
+        Matrix operator += (Matrix& A);
+        Matrix operator -= (Matrix& A);
+        
+        
+        Matrix operator += (data_t a);
+        Matrix operator -= (data_t a);
+        Matrix operator *= (data_t a);
+        Matrix operator /= (data_t a);
+        
+        bool operator == (Matrix& A);
+        //*
+        
+    };
+    
+    template <typename data_t, int size>
+    Matrix<data_t, size>::Matrix ()
+    {
+        size_ = size;
+        if (size < 1) {
+            ASSERT_MAT (size < 1)
+        }
+        
+        data_ = new subMatrix<data_t, size> [size_];
         for (int i = 0; i < size_; i++) {
             data_[i].subMatrix2(size_);
         }
@@ -39,10 +135,11 @@ namespace MatA {
     }
     
     
-    Matrix::Matrix (Matrix& M):
+    template <typename data_t, int size>
+    Matrix<data_t, size>::Matrix (Matrix<data_t, size>& M):
     size_(M.size_)
     {
-        data_ = new subMatrix [size_];
+        data_ = new subMatrix<data_t, size> [size_];
         for (int i = 0; i < size_; i++) {
             data_[i].subMatrix2(size_);
         }
@@ -56,44 +153,53 @@ namespace MatA {
     }
     
     
-    Matrix::~Matrix () {
+    template <typename data_t, int size>
+    Matrix<data_t, size>::~Matrix () {
         delete [] data_;
     }
     
     
-    float Matrix::get(int x, int y) const {
+    template <typename data_t, int size>
+    data_t Matrix<data_t, size>::get(int x, int y) const {
         
         return data_[x].get(y);
     }
     
-    float subMatrix::get (int y) const {
+    template <typename data_t, int size>
+    data_t subMatrix<data_t, size>::get (int y) const {
         return data_[y];
     }
     
     
-    float& Matrix::set(int x, int y) {
+    template <typename data_t, int size>
+    data_t& Matrix<data_t, size>::set(int x, int y) {
         
         return data_[x].set(y);
     }
     
-    float& subMatrix::set (int y) {
+    template <typename data_t, int size>
+    data_t& subMatrix<data_t, size>::set (int y) {
         return data_[y];
     }
     
     
     
-    subMatrix& Matrix::operator [] (int i) {
+    template <typename data_t, int size>
+    subMatrix<data_t, size>& Matrix<data_t, size>::operator [] (int i) {
         
         ASSERT_MAT((i>=0 && i<size_))
         
         return *(data_ + i);
     }
-    float& subMatrix::operator [] (int i) {
+    
+    template <typename data_t, int size>
+    data_t& subMatrix<data_t, size>::operator [] (int i) {
         ASSERT_MAT((i>=0 && i<size_))
         return *(data_ + i * size_);
     }
     
-    std::ostream& operator<< (std::ostream &out, Matrix &M)
+    template <typename data_t, int size>
+    std::ostream& operator<< (std::ostream &out, Matrix<data_t, size> &M)
     {
         for (int i = 0; i < M.size_; i++) {
             out << "| ";
@@ -108,7 +214,8 @@ namespace MatA {
         return out;
     }
     
-    std::istream& operator>> (std::istream &in, Matrix &M)
+    template <typename data_t, int size>
+    std::istream& operator>> (std::istream &in, Matrix<data_t, size> &M)
     {
         
         for (int i = 0; i < M.size_; i++) {
@@ -121,34 +228,8 @@ namespace MatA {
     }
     
     
-    /*
-    Matrix& Matrix::operator = (const Matrix & A) {
-        ASSERT_MAT(A.size_==(*this).size_)
-        for (int i = 0; i < A.size_; i++) {
-            for (int j = 0; j < A.size_; j++) {
-                (*this) [i] [j] = A.get(i, j);
-            }
-        }
-        return *this;
-    }
-    //*/
-    /*
-    Matrix& Matrix::operator = (const Matrix & A) {
-        ASSERT_MAT(A.size_==(*this).size_)
-        for (int i = 0; i < A.size_; i++) {
-            for (int j = 0; j < A.size_; j++) {
-                this->set(i, j) = A.get(i, j);
-                printf("1 %d %d | %g\n", i, j, A.get(i, j));
-                printf("2 %d %d | %g\n", i, j, this->get(i, j));
-            }
-        }
-        std::cout << *this << std::endl;
-        
-        return *this;
-    }
-    //*/
-    
-    Matrix& Matrix::operator = (const Matrix & A) {
+    template <typename data_t, int size>
+    Matrix<data_t, size>& Matrix<data_t, size>::operator = (const Matrix<data_t, size> & A) {
         ASSERT_MAT(A.size_==(*this).size_)
         for (int i = 0; i < A.size_; i++) {
             for (int j = 0; j < A.size_; j++) {
@@ -159,7 +240,8 @@ namespace MatA {
         return *this;
     }
     
-    Matrix& Matrix::operator = (const float & A) {
+    template <typename data_t, int size>
+    Matrix<data_t, size>& Matrix<data_t, size>::operator = (const data_t & A) {
         for (int i = 0; i < (*this).size_; i++) {
             for (int j = 0; j < (*this).size_; j++) {
                 (*this) [i] [j] = A;
@@ -169,9 +251,10 @@ namespace MatA {
     }
     
     
-    Matrix operator + (Matrix& A, Matrix& B)  {
+    template <typename data_t, int size>
+    Matrix<data_t, size> operator + (Matrix<data_t, size>& A, Matrix<data_t, size>& B)  {
         ASSERT_MAT(A.size_==B.size_)
-        Matrix M(A.size_);
+        Matrix<data_t, size> M(A.size_);
         for (int i = 0; i < M.size_; i++) {
             for (int j = 0; j < M.size_; j++) {
                 M [i] [j] = A [i] [j] + B [i] [j];
@@ -179,9 +262,11 @@ namespace MatA {
         }
         return M;
     }
-    Matrix operator - (Matrix& A, Matrix& B)  {
+    
+    template <typename data_t, int size>
+    Matrix<data_t, size> operator - (Matrix<data_t, size>& A, Matrix<data_t, size>& B)  {
         ASSERT_MAT(A.size_==B.size_)
-        Matrix M(A.size_);
+        Matrix<data_t, size> M(A.size_);
         for (int i = 0; i < M.size_; i++) {
             for (int j = 0; j < M.size_; j++) {
                 M [i] [j] = A [i] [j] - B [i] [j];
@@ -190,9 +275,10 @@ namespace MatA {
         return M;
     }
     
-    Matrix operator * (Matrix& A, Matrix& B) {
+    template <typename data_t, int size>
+    Matrix<data_t, size> operator * (Matrix<data_t, size>& A, Matrix<data_t, size>& B) {
         ASSERT_MAT(A.size_==B.size_)
-        Matrix M(A.size_);
+        Matrix<data_t, size> M(A.size_);
         for (int i = 0; i < M.size_; i++) {
             for (int j = 0; j < M.size_; j++) {
                 for (int k = 0; k < M.size_; k++) {
@@ -205,8 +291,9 @@ namespace MatA {
     
     
     
-    Matrix operator + (Matrix& A, float a) {
-        Matrix M(A.size_);
+    template <typename data_t, int size>
+    Matrix<data_t, size> operator + (Matrix<data_t, size>& A, data_t a) {
+        Matrix<data_t, size> M(A.size_);
         for (int i = 0; i < M.size_; i++) {
             for (int j = 0; j < M.size_; j++) {
                 M [i] [j] = A [i] [j] + a;
@@ -215,8 +302,9 @@ namespace MatA {
         return M;
     }
     
-    Matrix operator * (Matrix& A, float a) {
-        Matrix M(A.size_);
+    template <typename data_t, int size>
+    Matrix<data_t, size> operator * (Matrix<data_t, size>& A, data_t a) {
+        Matrix<data_t, size> M(A.size_);
         for (int i = 0; i < M.size_; i++) {
             for (int j = 0; j < M.size_; j++) {
                 M [i] [j] = A [i] [j] * a;
@@ -224,8 +312,10 @@ namespace MatA {
         }
         return M;
     }
-    Matrix operator - (Matrix& A, float a) {
-        Matrix M(A.size_);
+    
+    template <typename data_t, int size>
+    Matrix<data_t, size> operator - (Matrix<data_t, size>& A, data_t a) {
+        Matrix<data_t, size> M(A.size_);
         for (int i = 0; i < M.size_; i++) {
             for (int j = 0; j < M.size_; j++) {
                 M [i] [j] = A [i] [j] - a;
@@ -233,8 +323,10 @@ namespace MatA {
         }
         return M;
     }
-    Matrix operator / (Matrix& A, float a) {
-        Matrix M(A.size_);
+    
+    template <typename data_t, int size>
+    Matrix<data_t, size> operator / (Matrix<data_t, size>& A, data_t a) {
+        Matrix<data_t, size> M(A.size_);
         for (int i = 0; i < M.size_; i++) {
             for (int j = 0; j < M.size_; j++) {
                 M [i] [j] = A [i] [j] / a;
@@ -243,8 +335,9 @@ namespace MatA {
         return M;
     }
     
-    Matrix operator * (float a, Matrix& A) {
-        Matrix M(A.size_);
+    template <typename data_t, int size>
+    Matrix<data_t, size> operator * (data_t a, Matrix<data_t, size>& A) {
+        Matrix<data_t, size> M(A.size_);
         for (int i = 0; i < M.size_; i++) {
             for (int j = 0; j < M.size_; j++) {
                 M [i] [j] = A [i] [j] * a;
@@ -253,7 +346,8 @@ namespace MatA {
         return M;
     }
     
-    Matrix& operator ++ (Matrix& A, int)  {
+    template <typename data_t, int size>
+    Matrix<data_t, size>& operator ++ (Matrix<data_t, size>& A, int)  {
         for (int i = 0; i < A.size_; i++) {
             for (int j = 0; j < A.size_; j++) {
                 A [i] [j]++;
@@ -261,7 +355,8 @@ namespace MatA {
         }
         return A;
     }
-    Matrix& operator -- (Matrix& A, int)  {
+    template <typename data_t, int size>
+    Matrix<data_t, size>& operator -- (Matrix<data_t, size>& A, int)  {
         for (int i = 0; i < A.size_; i++) {
             for (int j = 0; j < A.size_; j++) {
                 A [i] [j]--;
@@ -269,7 +364,8 @@ namespace MatA {
         }
         return A;
     }
-    Matrix& operator ++ (Matrix& A)  {
+    template <typename data_t, int size>
+    Matrix<data_t, size>& operator ++ (Matrix<data_t, size>& A)  {
         for (int i = 0; i < A.size_; i++) {
             for (int j = 0; j < A.size_; j++) {
                 A [i] [j]++;
@@ -277,7 +373,8 @@ namespace MatA {
         }
         return A;
     }
-    Matrix& operator -- (Matrix& A)  {
+    template <typename data_t, int size>
+    Matrix<data_t, size>& operator -- (Matrix<data_t, size>& A)  {
         for (int i = 0; i < A.size_; i++) {
             for (int j = 0; j < A.size_; j++) {
                 A [i] [j]--;
@@ -286,11 +383,13 @@ namespace MatA {
         return A;
     }
     
-    const Matrix& operator + (const Matrix& A) {
+    template <typename data_t, int size>
+    const Matrix<data_t, size>& operator + (const Matrix<data_t, size>& A) {
         return A;
     }
-    Matrix operator - (Matrix& A)  {
-        Matrix M(A.size_);
+    template <typename data_t, int size>
+    Matrix<data_t, size> operator - (Matrix<data_t, size>& A)  {
+        Matrix<data_t, size> M(A.size_);
         for (int i = 0; i < M.size_; i++) {
             for (int j = 0; j < M.size_; j++) {
                 M [i] [j] = -(A [i] [j]);
@@ -299,7 +398,8 @@ namespace MatA {
         return M;
     }
     
-    Matrix Matrix::operator += (Matrix& A)  {
+    template <typename data_t, int size>
+    Matrix<data_t, size> Matrix<data_t, size>::operator += (Matrix<data_t, size>& A)  {
         ASSERT_MAT(A.size_==(*this).size_)
         for (int i = 0; i < A.size_; i++) {
             for (int j = 0; j < A.size_; j++) {
@@ -310,7 +410,8 @@ namespace MatA {
     }
     
     
-    Matrix Matrix::operator -= (Matrix& A)  {
+    template <typename data_t, int size>
+    Matrix<data_t, size> Matrix<data_t, size>::operator -= (Matrix<data_t, size>& A)  {
         ASSERT_MAT(A.size_==(*this).size_)
         for (int i = 0; i < A.size_; i++) {
             for (int j = 0; j < A.size_; j++) {
@@ -320,7 +421,8 @@ namespace MatA {
         return *this;
     }
     
-    Matrix Matrix::operator -= (float a)  {
+    template <typename data_t, int size>
+    Matrix<data_t, size> Matrix<data_t, size>::operator -= (data_t a)  {
         for (int i = 0; i < (*this).size_; i++) {
             for (int j = 0; j < (*this).size_; j++) {
                 (*this) [i] [j] -= a;
@@ -328,7 +430,8 @@ namespace MatA {
         }
         return *this;
     }
-    Matrix Matrix::operator += (float a)  {
+    template <typename data_t, int size>
+    Matrix<data_t, size> Matrix<data_t, size>::operator += (data_t a)  {
         for (int i = 0; i < (*this).size_; i++) {
             for (int j = 0; j < (*this).size_; j++) {
                 (*this) [i] [j] += a;
@@ -336,7 +439,8 @@ namespace MatA {
         }
         return *this;
     }
-    Matrix Matrix::operator *= (float a)  {
+    template <typename data_t, int size>
+    Matrix<data_t, size> Matrix<data_t, size>::operator *= (data_t a)  {
         for (int i = 0; i < (*this).size_; i++) {
             for (int j = 0; j < (*this).size_; j++) {
                 (*this) [i] [j] *= a;
@@ -344,7 +448,8 @@ namespace MatA {
         }
         return *this;
     }
-    Matrix Matrix::operator /= (float a)  {
+    template <typename data_t, int size>
+    Matrix<data_t, size> Matrix<data_t, size>::operator /= (data_t a)  {
         for (int i = 0; i < (*this).size_; i++) {
             for (int j = 0; j < (*this).size_; j++) {
                 (*this) [i] [j] -= a;
@@ -354,7 +459,8 @@ namespace MatA {
     }
     
     
-    bool Matrix::operator == (Matrix& A)  {
+    template <typename data_t, int size>
+    bool Matrix<data_t, size>::operator == (Matrix<data_t, size>& A)  {
         ASSERT_MAT(A.size_==(*this).size_)
         for (int i = 0; i < A.size_; i++) {
             for (int j = 0; j < A.size_; j++) {

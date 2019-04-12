@@ -1,6 +1,5 @@
 //
 //  MatA.cpp
-//  Vector
 //
 //  Created by macbook on 15/02/2019.
 //  Copyright © 2019 macbook. All rights reserved.
@@ -22,8 +21,11 @@ assert (expression);\
 #include <cassert>
 #include "MatA.hpp"
 
+
 namespace MatA {
-    float ABS (const Vector& A) {
+    //*
+     //*/
+    float ABS (const Vector3D& A) {
         return sqrt(A.x_ * A.x_ + A.y_ * A.y_ + A.z_ * A.z_);
     }
     float ABS (const Vector2D& A) {

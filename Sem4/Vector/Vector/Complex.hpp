@@ -1,6 +1,5 @@
 //
 //  Complex.hpp
-//  Vector
 //
 //  Created by macbook on 01/03/2019.
 //  Copyright © 2019 macbook. All rights reserved.
