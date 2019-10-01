@@ -278,7 +278,7 @@ namespace MatA {
     template <typename data_t, int size>
     Matrix<data_t, size> operator * (Matrix<data_t, size>& A, Matrix<data_t, size>& B) {
         ASSERT_MAT(A.size_==B.size_)
-        Matrix<data_t, size> M(A.size_);
+        Matrix<data_t, size> M;
         for (int i = 0; i < M.size_; i++) {
             for (int j = 0; j < M.size_; j++) {
                 for (int k = 0; k < M.size_; k++) {

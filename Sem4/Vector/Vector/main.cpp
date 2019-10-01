@@ -14,10 +14,29 @@
 
 int main(int argc, const char * argv[]) {
     
+    MatA::Matrix<double, 3> A;
+    MatA::Matrix<double, 3> B;
+    std::cout << "A = \n" << A;
+    std::cout << "in A \n";
+    std::cin >> A;
+    std::cout << "A = \n" << A;
+    std::cout << "B = \n" << B;
+    std::cout << "\nin B \n";
+    std::cin >> B;
+    std::cout << "B = \n" << B;
+    
+    
+    MatA::Matrix<double, 3> C;
+    C = A * B;
+    
+    
+    std::cout << "out C = A * B\n" << C << std::endl;
+    
     try {
         int a = 0;
         MatA::Vector<int, 3> A(2), B(1), C;
         C = A + B;
+        
         std::cout << C << std::endl;
     } catch (int i) {
         printf("Ошибка:");

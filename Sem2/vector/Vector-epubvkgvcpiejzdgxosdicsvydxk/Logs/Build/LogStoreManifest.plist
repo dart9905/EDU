@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>75EE4D33-78C2-4B37-9DB0-C1F3C88CE272</key>
+		<key>3D54B913-854B-4B40-B039-4ED6D0950E1B</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -15,7 +15,9 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>75EE4D33-78C2-4B37-9DB0-C1F3C88CE272.xcactivitylog</string>
+			<string>3D54B913-854B-4B40-B039-4ED6D0950E1B.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
@@ -30,13 +32,47 @@
 			<key>signature</key>
 			<string>Build Vector</string>
 			<key>timeStartedRecording</key>
-			<real>575906198.65192699</real>
+			<real>590770731.98249698</real>
 			<key>timeStoppedRecording</key>
-			<real>575906204.25468898</real>
+			<real>590770732.01275098</real>
 			<key>title</key>
 			<string>Build Vector</string>
 			<key>uniqueIdentifier</key>
-			<string>75EE4D33-78C2-4B37-9DB0-C1F3C88CE272</string>
+			<string>3D54B913-854B-4B40-B039-4ED6D0950E1B</string>
+		</dict>
+		<key>EE0C41FD-E7A2-4F55-861D-469B1FF61B23</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>EE0C41FD-E7A2-4F55-861D-469B1FF61B23.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Vector project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Vector</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>0</integer>
+			<key>signature</key>
+			<string>Build Vector</string>
+			<key>timeStartedRecording</key>
+			<real>591024018.71261406</real>
+			<key>timeStoppedRecording</key>
+			<real>591024021.54545903</real>
+			<key>title</key>
+			<string>Build Vector</string>
+			<key>uniqueIdentifier</key>
+			<string>EE0C41FD-E7A2-4F55-861D-469B1FF61B23</string>
 		</dict>
 	</dict>
 </dict>
