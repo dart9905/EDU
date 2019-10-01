@@ -12,7 +12,7 @@ if (expression) {\
 } else {\
 FILE *files = fopen ("LogFiles.txt", "at");\
 \
-fprintf(files, "==========ASSERT_MAT=========\n\n");\
+fprintf(files, "==========ASSERT_MATRIX=========\n\n");\
 fprintf(files, "ERROR:\nAssertion failed: %s\n   in file %s;\n   in line %i.\n", #expression, __FILE__, __LINE__);\
 fprintf(files, "\n===========================\n\n");\
 \
@@ -29,7 +29,8 @@ assert (expression);\
 
 
 
-
+template <typename data_t>
+class Vector;
 
 template <typename data_t>
 class subMatrix {
@@ -41,6 +42,7 @@ public:
     {
         size_ = size;
         data_ = new data_t [size_] {};
+        ASSERT_MAT(data_ != NULL)
         
     }
     ~subMatrix()
@@ -113,6 +115,9 @@ public:
     Matrix operator *= (data_t a);
     
     bool operator == (Matrix& A);
+    
+    template <typename data_t1>
+    friend Vector <data_t1> operator * (Matrix<data_t1>& A, Vector<data_t1>& B);
     //*
     
 };
@@ -123,8 +128,11 @@ Matrix<data_t>::Matrix ():
 size_(1)
 {
     data_ = new subMatrix<data_t>* [size_];
+    ASSERT_MAT(data_ != NULL)
     for (int i = 0; i < size_; i++) {
         data_ [i] = new subMatrix<data_t> (size_);
+        
+        ASSERT_MAT(data_[i] != NULL)
     }
     
 }
@@ -139,8 +147,10 @@ size_(size)
     }
     
     data_ = new subMatrix<data_t>* [size_];
+    ASSERT_MAT(data_ != NULL)
     for (int i = 0; i < size_; i++) {
         data_ [i] = new subMatrix<data_t> (size_);
+        ASSERT_MAT(data_ != NULL)
     }
     
 }
@@ -155,8 +165,10 @@ size_(M.size_)
     }
     
     data_ = new subMatrix<data_t>* [size_];
+    ASSERT_MAT(data_ != NULL)
     for (int i = 0; i < size_; i++) {
         data_ [i] = new subMatrix<data_t> (size_);
+        ASSERT_MAT(data_ != NULL)
     }
     
     for (int i = 0; i < size_; i++) {
@@ -201,6 +213,7 @@ data_t Matrix<data_t>::det () {
     data_t D = 0;
     Matrix<data_t>* M;
     M = new Matrix<data_t> (size_ - 1);
+    ASSERT_MAT(data_ != NULL)
     
     
     for (int i = 0, j = 1; i < size_; i++, j *= -1) {
@@ -225,6 +238,7 @@ bool Matrix<data_t>::nondegeneracy() {
     
     Matrix<data_t>* M;
     M = new Matrix<data_t> (size_ - 1);
+    ASSERT_MAT(data_ != NULL)
     
     
     for (int i = 0; i < size_; i++) {
