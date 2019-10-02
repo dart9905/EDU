@@ -54,6 +54,11 @@ public:
     
     double abc ();
     
+    
+    int getsize() {
+        return size_;
+    }
+    
     template <typename data_t1>
     friend std::ostream& operator<< (std::ostream &out, Vector<data_t1> &V);
     template <typename data_t1>

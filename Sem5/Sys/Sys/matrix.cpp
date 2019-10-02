@@ -72,6 +72,10 @@ public:
     Matrix (Matrix& M);
     ~Matrix ();
     
+    int getsize() {
+        return size_;
+    }
+    
     
     data_t det();
     bool nondegeneracy();
@@ -81,6 +85,9 @@ public:
      
     
     subMatrix<data_t>& operator [] (int i);
+    
+
+    int BufToMatrix (char* buf);
     
     template <typename data_t1>
     friend std::ostream& operator<< (std::ostream &out, Matrix<data_t1> &M);
@@ -115,6 +122,9 @@ public:
     Matrix operator *= (data_t a);
     
     bool operator == (Matrix& A);
+    
+    template <typename data_t1>
+    friend bool operator == (Matrix<data_t1>& A, Matrix<data_t1>& B);
     
     template <typename data_t1>
     friend Vector <data_t1> operator * (Matrix<data_t1>& A, Vector<data_t1>& B);
@@ -184,6 +194,34 @@ Matrix<data_t>::~Matrix () {
     delete [] data_;
 }
 
+/*
+ 2
+ -1  -10
+ -10  -1
+ 
+ 
+ */
+template <typename data_t>
+int Matrix<data_t>::BufToMatrix (char* buf) {
+    
+    for (int i = 0, k = 1, h = 1, s = 0; i < size_; i++) {
+        for (int j = 0; j < size_; j++, h = 1, s = 0) {
+            for (; (buf [k] == ' ') || ((buf [k] == '\n')); k++);
+            ASSERT_MAT(buf[k] != '\0')
+            if (buf [k] == '-') {
+                k++;
+                h = -1;
+            }
+            ASSERT_MAT(buf[k] != '\0')
+            for (; (buf [k] != ' ') && (buf [k] != '\n') && (buf [k] != '\0'); k++) {
+                s = s * 10 + (buf [k] - '0');
+            }
+            (*this) [i] [j] = h * s;
+            
+        }
+    }
+    return 0;
+}
 
 
 template <typename data_t>
@@ -439,6 +477,18 @@ Matrix<data_t> Matrix<data_t>::operator *= (data_t a)  {
         }
     }
     return *this;
+}
+        
+template <typename data_t>
+bool operator == (Matrix<data_t>& A, Matrix<data_t>& B) {
+    ASSERT_MAT(A.size_==B.size_)
+    for (int i = 0; i < A.size_; i++) {
+        for (int j = 0; j < A.size_; j++) {
+            if (B [i] [j] != (A [i] [j]))
+                return false;
+        }
+    }
+    return true;
 }
         
 

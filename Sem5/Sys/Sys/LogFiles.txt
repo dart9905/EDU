@@ -1,0 +1,45 @@
+==========ASSERT_VECTOR=========
+
+ERROR:
+Assertion failed: (i>=0 && i<size_)
+   in file /Users/macbook/Documents/GitHub/EDU/Sem5/Sys/Sys/vector.cpp;
+   in line 163.
+
+===========================
+
+==========ASSERT_VECTOR=========
+
+ERROR:
+Assertion failed: (i>=0 && i<size_)
+   in file /Users/macbook/Documents/GitHub/EDU/Sem5/Sys/Sys/vector.cpp;
+   in line 163.
+
+===========================
+
+==========ASSERT_VECTOR=========
+
+ERROR:
+Assertion failed: (i>=0 && i<size_)
+   in file /Users/macbook/Documents/GitHub/EDU/Sem5/Sys/Sys/vector.cpp;
+   in line 163.
+
+===========================
+
+==========ASSERT_MATRIX=========
+
+ERROR:
+Assertion failed: buf[k] != '\0'
+   in file /Users/macbook/Documents/GitHub/EDU/Sem5/Sys/Sys/matrix.cpp;
+   in line 210.
+
+===========================
+
+==========ASSERT_MATRIX=========
+
+ERROR:
+Assertion failed: buf[k] != '\0'
+   in file /Users/macbook/Documents/GitHub/EDU/Sem5/Sys/Sys/matrix.cpp;
+   in line 210.
+
+===========================
+
