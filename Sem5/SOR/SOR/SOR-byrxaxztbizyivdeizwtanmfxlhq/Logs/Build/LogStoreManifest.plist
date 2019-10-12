@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>07C69B0B-74FD-457A-9601-8B6147B07E6B</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>07C69B0B-74FD-457A-9601-8B6147B07E6B.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>SOR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>SOR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build SOR</string>
+			<key>timeStartedRecording</key>
+			<real>592581534.68347096</real>
+			<key>timeStoppedRecording</key>
+			<real>592581535.79138803</real>
+			<key>title</key>
+			<string>Build SOR</string>
+			<key>uniqueIdentifier</key>
+			<string>07C69B0B-74FD-457A-9601-8B6147B07E6B</string>
+		</dict>
+		<key>0BFDF5C4-018B-4826-8F8A-DE19DF8ABF79</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>0BFDF5C4-018B-4826-8F8A-DE19DF8ABF79.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>SOR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>SOR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build SOR</string>
+			<key>timeStartedRecording</key>
+			<real>592581970.90833795</real>
+			<key>timeStoppedRecording</key>
+			<real>592581972.56997001</real>
+			<key>title</key>
+			<string>Build SOR</string>
+			<key>uniqueIdentifier</key>
+			<string>0BFDF5C4-018B-4826-8F8A-DE19DF8ABF79</string>
+		</dict>
+		<key>55596B31-3589-4D76-9C44-E458C796B1F4</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>55596B31-3589-4D76-9C44-E458C796B1F4.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>SOR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>SOR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build SOR</string>
+			<key>timeStartedRecording</key>
+			<real>592581701.40776205</real>
+			<key>timeStoppedRecording</key>
+			<real>592581701.88865495</real>
+			<key>title</key>
+			<string>Build SOR</string>
+			<key>uniqueIdentifier</key>
+			<string>55596B31-3589-4D76-9C44-E458C796B1F4</string>
+		</dict>
+		<key>AD971A37-5CFD-4E7E-A5E3-4B85BA6420CB</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>AD971A37-5CFD-4E7E-A5E3-4B85BA6420CB.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>SOR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>SOR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build SOR</string>
+			<key>timeStartedRecording</key>
+			<real>592437304.13299894</real>
+			<key>timeStoppedRecording</key>
+			<real>592437305.84364796</real>
+			<key>title</key>
+			<string>Build SOR</string>
+			<key>uniqueIdentifier</key>
+			<string>AD971A37-5CFD-4E7E-A5E3-4B85BA6420CB</string>
+		</dict>
+		<key>F7BA1FB9-B3EA-4661-9DE0-20EE4353D8B5</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>F7BA1FB9-B3EA-4661-9DE0-20EE4353D8B5.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>SOR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>SOR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build SOR</string>
+			<key>timeStartedRecording</key>
+			<real>592581352.264341</real>
+			<key>timeStoppedRecording</key>
+			<real>592581352.92680299</real>
+			<key>title</key>
+			<string>Build SOR</string>
+			<key>uniqueIdentifier</key>
+			<string>F7BA1FB9-B3EA-4661-9DE0-20EE4353D8B5</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
