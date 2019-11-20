@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>CB85456F-3418-4528-82FE-56FCC187691A</key>
+		<key>04600431-9F34-464C-9EEB-1655CFB48800</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>CB85456F-3418-4528-82FE-56FCC187691A.xcactivitylog</string>
+			<string>04600431-9F34-464C-9EEB-1655CFB48800.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -32,13 +32,47 @@
 			<key>signature</key>
 			<string>Debug SYS</string>
 			<key>timeStartedRecording</key>
-			<real>592581102.86163795</real>
+			<real>595869050.66895604</real>
 			<key>timeStoppedRecording</key>
-			<real>592581117.18881404</real>
+			<real>595869051.92707503</real>
 			<key>title</key>
 			<string>Debug SYS</string>
 			<key>uniqueIdentifier</key>
-			<string>CB85456F-3418-4528-82FE-56FCC187691A</string>
+			<string>04600431-9F34-464C-9EEB-1655CFB48800</string>
+		</dict>
+		<key>69CC3A59-50C0-4273-9525-51CA185307BA</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>69CC3A59-50C0-4273-9525-51CA185307BA.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>SYS project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>SYS</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug SYS</string>
+			<key>timeStartedRecording</key>
+			<real>595856013.567958</real>
+			<key>timeStoppedRecording</key>
+			<real>595856028.45356703</real>
+			<key>title</key>
+			<string>Debug SYS</string>
+			<key>uniqueIdentifier</key>
+			<string>69CC3A59-50C0-4273-9525-51CA185307BA</string>
 		</dict>
 	</dict>
 </dict>

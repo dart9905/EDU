@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>C651530A-6F00-4B27-A6F1-9FBD310D654A</key>
+		<key>77A5A698-0946-4ED2-867E-DB3229632DD3</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -15,13 +15,13 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>C651530A-6F00-4B27-A6F1-9FBD310D654A.xcactivitylog</string>
+			<string>77A5A698-0946-4ED2-867E-DB3229632DD3.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
-				<string>W</string>
+				<string>S</string>
 			</dict>
 			<key>schemeIdentifier-containerName</key>
 			<string>SYS project</string>
@@ -32,13 +32,47 @@
 			<key>signature</key>
 			<string>Build SYS</string>
 			<key>timeStartedRecording</key>
-			<real>592581101.54101098</real>
+			<real>595869049.99211395</real>
 			<key>timeStoppedRecording</key>
-			<real>592581102.85881102</real>
+			<real>595869050.665766</real>
 			<key>title</key>
 			<string>Build SYS</string>
 			<key>uniqueIdentifier</key>
-			<string>C651530A-6F00-4B27-A6F1-9FBD310D654A</string>
+			<string>77A5A698-0946-4ED2-867E-DB3229632DD3</string>
+		</dict>
+		<key>FC1517C2-7DA5-4A35-8937-1AB728354135</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>FC1517C2-7DA5-4A35-8937-1AB728354135.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>SYS project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>SYS</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build SYS</string>
+			<key>timeStartedRecording</key>
+			<real>595856012.56446397</real>
+			<key>timeStoppedRecording</key>
+			<real>595856013.56361103</real>
+			<key>title</key>
+			<string>Build SYS</string>
+			<key>uniqueIdentifier</key>
+			<string>FC1517C2-7DA5-4A35-8937-1AB728354135</string>
 		</dict>
 	</dict>
 </dict>

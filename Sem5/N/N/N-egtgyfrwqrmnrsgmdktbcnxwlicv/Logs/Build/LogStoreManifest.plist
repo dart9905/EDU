@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>D3A087AA-7C8B-4765-85CD-8F07C79A9AFA</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>D3A087AA-7C8B-4765-85CD-8F07C79A9AFA.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>N project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>N</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build N</string>
+			<key>timeStartedRecording</key>
+			<real>595937342.41205394</real>
+			<key>timeStoppedRecording</key>
+			<real>595937344.31896102</real>
+			<key>title</key>
+			<string>Build N</string>
+			<key>uniqueIdentifier</key>
+			<string>D3A087AA-7C8B-4765-85CD-8F07C79A9AFA</string>
+		</dict>
+		<key>EC6519A1-D08B-4B31-9C1E-C5DE95F1CD5A</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>EC6519A1-D08B-4B31-9C1E-C5DE95F1CD5A.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>N project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>N</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build N</string>
+			<key>timeStartedRecording</key>
+			<real>595923597.10454595</real>
+			<key>timeStoppedRecording</key>
+			<real>595923597.73780096</real>
+			<key>title</key>
+			<string>Build N</string>
+			<key>uniqueIdentifier</key>
+			<string>EC6519A1-D08B-4B31-9C1E-C5DE95F1CD5A</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

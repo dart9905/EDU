@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>54EEB51A-07E3-47BD-9979-385B4D61F9D6</key>
+		<key>E67FCECF-1C11-4EA2-B34A-EE2B93A283F8</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>54EEB51A-07E3-47BD-9979-385B4D61F9D6.xcactivitylog</string>
+			<string>E67FCECF-1C11-4EA2-B34A-EE2B93A283F8.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -32,15 +32,15 @@
 			<key>signature</key>
 			<string>Debug SOR</string>
 			<key>timeStartedRecording</key>
-			<real>592581972.573241</real>
+			<real>595792022.59937203</real>
 			<key>timeStoppedRecording</key>
-			<real>592581979.43646705</real>
+			<real>595792024.03826702</real>
 			<key>title</key>
 			<string>Debug SOR</string>
 			<key>uniqueIdentifier</key>
-			<string>54EEB51A-07E3-47BD-9979-385B4D61F9D6</string>
+			<string>E67FCECF-1C11-4EA2-B34A-EE2B93A283F8</string>
 		</dict>
-		<key>80A65027-D70A-4E6D-AD15-68F3406E6ACE</key>
+		<key>E8C52365-89FF-4DE8-8E40-E1CEE2C9A229</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -49,7 +49,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>80A65027-D70A-4E6D-AD15-68F3406E6ACE.xcactivitylog</string>
+			<string>E8C52365-89FF-4DE8-8E40-E1CEE2C9A229.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -66,13 +66,13 @@
 			<key>signature</key>
 			<string>Debug SOR</string>
 			<key>timeStartedRecording</key>
-			<real>592437305.85635495</real>
+			<real>595868708.17925799</real>
 			<key>timeStoppedRecording</key>
-			<real>592437330.30482495</real>
+			<real>595868717.85793304</real>
 			<key>title</key>
 			<string>Debug SOR</string>
 			<key>uniqueIdentifier</key>
-			<string>80A65027-D70A-4E6D-AD15-68F3406E6ACE</string>
+			<string>E8C52365-89FF-4DE8-8E40-E1CEE2C9A229</string>
 		</dict>
 	</dict>
 </dict>
