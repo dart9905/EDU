@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>50A2ECCC-BB2E-496F-8148-9DE1801AE977</key>
+		<key>1110AEA5-48F4-40A3-BBC7-D67DB35A8BD8</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>50A2ECCC-BB2E-496F-8148-9DE1801AE977.xcactivitylog</string>
+			<string>1110AEA5-48F4-40A3-BBC7-D67DB35A8BD8.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -32,47 +32,13 @@
 			<key>signature</key>
 			<string>Debug N</string>
 			<key>timeStartedRecording</key>
-			<real>595893358.91447103</real>
+			<real>595979748.79154098</real>
 			<key>timeStoppedRecording</key>
-			<real>595893360.26216304</real>
+			<real>595979783.03713405</real>
 			<key>title</key>
 			<string>Debug N</string>
 			<key>uniqueIdentifier</key>
-			<string>50A2ECCC-BB2E-496F-8148-9DE1801AE977</string>
-		</dict>
-		<key>5644EA78-89D2-4F43-8C88-0EB3F62E0EA9</key>
-		<dict>
-			<key>className</key>
-			<string>DBGConsoleLog</string>
-			<key>documentTypeString</key>
-			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
-			<key>fileName</key>
-			<string>5644EA78-89D2-4F43-8C88-0EB3F62E0EA9.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>N project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>N</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Debug N</string>
-			<key>timeStartedRecording</key>
-			<real>595931274.929685</real>
-			<key>timeStoppedRecording</key>
-			<real>595931290.86424303</real>
-			<key>title</key>
-			<string>Debug N</string>
-			<key>uniqueIdentifier</key>
-			<string>5644EA78-89D2-4F43-8C88-0EB3F62E0EA9</string>
+			<string>1110AEA5-48F4-40A3-BBC7-D67DB35A8BD8</string>
 		</dict>
 	</dict>
 </dict>
