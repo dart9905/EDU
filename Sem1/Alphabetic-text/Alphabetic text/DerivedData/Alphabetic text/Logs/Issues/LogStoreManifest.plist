@@ -3,31 +3,36 @@
 <plist version="1.0">
 <dict>
 	<key>logFormatVersion</key>
-	<integer>9</integer>
+	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>6829D9D4-D8C1-43EF-8FA8-CCAA04AB597F</key>
+		<key>168DDFD2-9BAC-41D6-9CE0-93BF91387032</key>
 		<dict>
 			<key>className</key>
-			<string>IDEActivityLogSection</string>
+			<string>IDEActivityLogMajorGroupSection</string>
 			<key>documentTypeString</key>
 			<string>&lt;nil&gt;</string>
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.target.product-type.tool</string>
 			<key>fileName</key>
-			<string>6829D9D4-D8C1-43EF-8FA8-CCAA04AB597F.xcactivitylog</string>
-			<key>highLevelStatus</key>
-			<string>W</string>
+			<string>168DDFD2-9BAC-41D6-9CE0-93BF91387032.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
 			<key>signature</key>
 			<string>Alphabetic_text-ajrabdlsvdbvbocvjwzeknslmide</string>
 			<key>timeStartedRecording</key>
-			<real>561495332.03466702</real>
+			<real>604873327.82239699</real>
 			<key>timeStoppedRecording</key>
-			<real>561495332.92685401</real>
+			<real>604873328.15099895</real>
 			<key>title</key>
 			<string>Build target Alphabetic text</string>
 			<key>uniqueIdentifier</key>
-			<string>6829D9D4-D8C1-43EF-8FA8-CCAA04AB597F</string>
+			<string>168DDFD2-9BAC-41D6-9CE0-93BF91387032</string>
 		</dict>
 	</dict>
 	<key>preserveOldLogs</key>

@@ -13,14 +13,14 @@
 
 int main (int argc, char *argv[])
 {
-  int rank, size;
+  int R, S;
 
   MPI_Init (&argc, &argv);
     
-  MPI_Comm_rank (MPI_COMM_WORLD, &rank);
-  MPI_Comm_size (MPI_COMM_WORLD, &size);
+  MPI_Comm_rank (MPI_COMM_WORLD, &R);
+  MPI_Comm_size (MPI_COMM_WORLD, &S);
     
-  printf( "Hello N = %i; rang = %i\n\n", rank, size );
+  printf( "Hello N = %i; rang = %i\n\n", R, S);
     
   MPI_Finalize();
   return 0;
