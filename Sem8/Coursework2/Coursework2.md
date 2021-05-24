@@ -87,8 +87,8 @@ U_{out}(t)=\int\limits_0^t\int\limits_0^{\tau_2}U_{int}(\tau_1)\,d\tau_1\,d\tau_
 Форсирующее звено:
 
 $$W_\text{фор}(s)=\frac{(1+\tau s)}{\tau D}\qquad\Rightarrow\qquad 
-U_{out}(t)=\left(U_{int}(t)+\tau\frac{dU_{int}(t)}{dt}\right)/(\tau D).
-$$
+U_{out}(t)=\left(U_{int}(t)+\tau\frac{dU_{int}(t)}{dt}\right)/(\tau D). $$
+
 Контур углового сопровождения:
 
 $$d=\frac{\Delta\omega_0}{\Delta\theta}=\frac{U_{out}(t)}{U_{int}(t)}\qquad\Rightarrow\qquad U_{out}(t)=U_{int}(t)\cdot d$$
@@ -98,18 +98,12 @@ $$d=\frac{\Delta\omega_0}{\Delta\theta}=\frac{U_{out}(t)}{U_{int}(t)}\qquad\Righ
 $N = 7$
 
 Тогда ускорение цели:
+
 $Wy = 10\dot N = 70$ м$/$сек$^2$
 
+Блок интегратора:
 
-```python
-def signal_Wy(t, dt):
-    N = 7
-    sig = 10*N
-    return sig
-```
-
-Блок интегратора:$$U_{out}(t)=\int\limits_0^tU_{int}(\tau)\,d\tau;$$
-
+$$U_{out}(t)=\int\limits_0^tU_{int}(\tau)\,d\tau;$$
 
 ```python
 '''
@@ -118,10 +112,21 @@ def signal_Wy(t, dt):
 def integrator(sum_out, sum_in, dt):
     sum_out += sum_in * dt
     return sum_out
+ 
 ```
 
-Блок угловой скорости:$$U_{out}(t)=\left(U_{int}(t)+\tau\frac{dU_{int}(t)}{dt}\right)/(\tau D).
-$$
+Блок угловой скорости:
+
+$$U_{out}(t)=\left(U_{int}(t)+\tau\frac{dU_{int}(t)}{dt}\right)/(\tau D).$$
+
+
+
+```python
+def signal_Wy(t, dt):
+    N = 7
+    sig = 10*N
+    return sig
+```
 
 Формирует сигнал угловой скорости, необходимой для полного разворота в сторону моневра цели.
 
@@ -265,6 +270,7 @@ def board_digital_computer(delta_sampl, t, T, lambd_prev, w0_prev, d, T2, n):
 ```
 
 Блок уравнения стабилизации:
+
 $$\frac{\lambda_0 - W_p-2\xi T_k\dot{W}_p}{T_k^2}$$
 
 
