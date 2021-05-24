@@ -93,14 +93,6 @@ U_{out}(t)=\left(U_{int}(t)+\tau\frac{dU_{int}(t)}{dt}\right)/(\tau D). $$
 
 $$d=\frac{\Delta\omega_0}{\Delta\theta}=\frac{U_{out}(t)}{U_{int}(t)}\qquad\Rightarrow\qquad U_{out}(t)=U_{int}(t)\cdot d$$
 
-
-Блок сигнала на вход САУ - ускорение цели:
-$N = 7$
-
-Тогда ускорение цели:
-
-$Wy = 10\dot N = 70$ м$/$сек$^2$
-
 Блок интегратора:
 
 $$U_{out}(t)=\int\limits_0^tU_{int}(\tau)\,d\tau;$$
@@ -115,11 +107,9 @@ def integrator(sum_out, sum_in, dt):
  
 ```
 
-Блок угловой скорости:
+Блок сигнала на вход САУ - ускорение цели: $N = 7$
 
-$$U_{out}(t)=\left(U_{int}(t)+\tau\frac{dU_{int}(t)}{dt}\right)/(\tau D).$$
-
-
+Тогда ускорение цели: $Wy = 10\dot N = 70$ м$/$сек$^2$
 
 ```python
 def signal_Wy(t, dt):
@@ -127,6 +117,10 @@ def signal_Wy(t, dt):
     sig = 10*N
     return sig
 ```
+
+Блок угловой скорости:
+
+$$U_{out}(t)=\left(U_{int}(t)+\tau\frac{dU_{int}(t)}{dt}\right)/(\tau D).$$
 
 Формирует сигнал угловой скорости, необходимой для полного разворота в сторону моневра цели.
 
